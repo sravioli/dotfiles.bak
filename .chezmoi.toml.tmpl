@@ -2,12 +2,14 @@
 {{- $email := promptStringOnce . "gituser.email" "Git author email" -}}
 {{- $signingkey := promptStringOnce . "gituser.signingkey" "Git signing key id (blank for none)" "" -}}
 {{- $machine := promptStringOnce . "machine" "Machine type (work/personal)" "personal" -}}
+{{- $workApps := promptBoolOnce . "installWorkApps" "Install work-laptop apps (DBeaver, Rancher Desktop, Codex, Copilot app)" (eq $machine "work") -}}
 
 # chezmoi configuration — generated at `chezmoi init`.
 # Prompted values are stored here (this file is local and never committed).
 
 [data]
     machine = {{ $machine | quote }}
+    installWorkApps = {{ $workApps }}
 
 [data.gituser]
     name = {{ $name | quote }}

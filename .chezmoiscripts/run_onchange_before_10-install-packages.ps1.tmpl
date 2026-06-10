@@ -3,22 +3,35 @@
 # Idempotent: winget skips packages that are already installed.
 $ErrorActionPreference = 'Continue'
 
-$packages = @(
-{{- range .packages.winget }}
-    '{{ . }}',
-{{- end }}
-    $null
-)
-
 $common = @(
     '--exact', '--source', 'winget',
     '--accept-source-agreements', '--accept-package-agreements',
     '--silent', '--disable-interactivity'
 )
 
-foreach ($id in $packages) {
-    if (-not $id) { continue }
-    Write-Host "==> winget install $id"
-    winget install --id $id @common 2>&1 | Out-Host
+function Install-WingetIds([string[]]$ids) {
+    foreach ($id in $ids) {
+        if (-not $id) { continue }
+        Write-Host "==> winget install $id"
+        winget install --id $id @common 2>&1 | Out-Host
+    }
 }
+
+$packages = @(
+{{- range .packages.winget }}
+    '{{ . }}',
+{{- end }}
+    $null
+)
+Install-WingetIds $packages
+{{ if .installWorkApps }}
+# Optional work-laptop apps (selected at `chezmoi init`).
+$workPackages = @(
+{{- range .packages.wingetWork }}
+    '{{ . }}',
+{{- end }}
+    $null
+)
+Install-WingetIds $workPackages
+{{- end }}
 {{- end -}}
