@@ -34,11 +34,16 @@ holds machine state that must not be redirected).
 ### Windows
 
 ```powershell
-# 1. Install prerequisites (use --source winget to avoid msstore cert errors).
-winget install --id Git.Git --source winget
-winget install --id twpayne.chezmoi --source winget
+# One command: installs chezmoi into ~/bin, then clones + applies your dotfiles.
+# chezmoi clones with its built-in git, so no prerequisites are required first;
+# the bootstrap scripts then install Git, a PATH-managed chezmoi, and the toolset.
+iex "&{$(irm 'https://get.chezmoi.io/ps1')} -b '~/bin' -- init --apply <your-repo-url>"
+```
 
-# 2. Open a NEW terminal so PATH picks up git + chezmoi, then:
+Prefer winget? Install chezmoi first, then init in a new terminal:
+
+```powershell
+winget install --id twpayne.chezmoi --source winget
 chezmoi init --apply <your-repo-url>
 ```
 
