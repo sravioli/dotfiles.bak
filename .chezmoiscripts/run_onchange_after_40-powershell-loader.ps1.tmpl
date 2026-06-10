@@ -1,0 +1,23 @@
+{{- if eq .chezmoi.os "windows" -}}
+# Point the real PowerShell 7 (pwsh) profile at the versioned profile under
+# ~/.config by writing a small loader stub. The stub dot-sources the canonical
+# profile; that file derives its own directory, so Profile/ resolves correctly.
+$canonical = Join-Path $HOME '.config\powershell\Microsoft.PowerShell_profile.ps1'
+$docs = [Environment]::GetFolderPath('MyDocuments')
+$profileDir = Join-Path $docs 'PowerShell'
+$profilePath = Join-Path $profileDir 'Microsoft.PowerShell_profile.ps1'
+
+$stub = @"
+# Managed by chezmoi. Loads the versioned PowerShell profile from ~/.config.
+. "$canonical"
+"@
+
+New-Item -ItemType Directory -Force -Path $profileDir | Out-Null
+$current = if (Test-Path -LiteralPath $profilePath) { Get-Content -Raw -LiteralPath $profilePath } else { $null }
+if ($current -ne $stub) {
+    Set-Content -LiteralPath $profilePath -Value $stub -Encoding utf8 -NoNewline
+    Write-Host "Wrote PowerShell loader stub to $profilePath"
+} else {
+    Write-Host 'PowerShell loader stub already up to date.'
+}
+{{- end -}}

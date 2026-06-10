@@ -1,0 +1,24 @@
+{{- if eq .chezmoi.os "windows" -}}
+# Install the base toolset with winget. Re-runs when this list changes.
+# Idempotent: winget skips packages that are already installed.
+$ErrorActionPreference = 'Continue'
+
+$packages = @(
+{{- range .packages.winget }}
+    '{{ . }}',
+{{- end }}
+    $null
+)
+
+$common = @(
+    '--exact', '--source', 'winget',
+    '--accept-source-agreements', '--accept-package-agreements',
+    '--silent', '--disable-interactivity'
+)
+
+foreach ($id in $packages) {
+    if (-not $id) { continue }
+    Write-Host "==> winget install $id"
+    winget install --id $id @common 2>&1 | Out-Host
+}
+{{- end -}}

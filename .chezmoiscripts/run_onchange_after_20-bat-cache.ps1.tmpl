@@ -1,0 +1,13 @@
+{{- if eq .chezmoi.os "windows" -}}
+# Rebuild bat's theme cache so the versioned kanagawa themes are available.
+# Re-runs whenever any theme file changes (content hashes below).
+#   {{ include "dot_config/bat/themes/kanagawa/kanagawa-dragon.tmTheme" | sha256sum }}
+#   {{ include "dot_config/bat/themes/kanagawa/kanagawa-lotus.tmTheme" | sha256sum }}
+#   {{ include "dot_config/bat/themes/kanagawa/kanagawa-wave.tmTheme" | sha256sum }}
+$env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [Environment]::GetEnvironmentVariable('Path','User')
+if (Get-Command bat -ErrorAction SilentlyContinue) {
+    bat cache --build
+} else {
+    Write-Host 'bat not found on PATH; skipping cache build.'
+}
+{{- end -}}

@@ -1,0 +1,58 @@
+{{- if eq .chezmoi.os "windows" -}}
+# Mirror versioned configs into their Windows %APPDATA% locations.
+#   gitui / bat : directory junctions (the whole folder is theirs; live link, no admin).
+#   VS Code     : file copy (the User folder also holds machine state we must not redirect).
+# Re-runs whenever the copied VS Code files change (content hashes below):
+#   {{ include "dot_config/Code/User/settings.json" | sha256sum }}
+#   {{ include "dot_config/Code/User/keybindings.json" | sha256sum }}
+$ErrorActionPreference = 'Stop'
+$cfg = Join-Path $HOME '.config'
+
+function Set-ConfigJunction {
+    param([string]$Link, [string]$Target)
+    if (-not (Test-Path -LiteralPath $Target)) {
+        Write-Host "skip junction (source missing): $Target"
+        return
+    }
+    $existing = Get-Item -LiteralPath $Link -Force -ErrorAction SilentlyContinue
+    if ($existing) {
+        if ($existing.LinkType) {
+            $current = (@($existing.Target) -join '').TrimEnd('\')
+            if ($current -ieq $Target.TrimEnd('\')) {
+                Write-Host "junction ok: $Link -> $Target"
+                return
+            }
+            cmd /c rmdir "$Link" | Out-Null
+        }
+        else {
+            $backup = "$Link.bak-$(Get-Date -Format yyyyMMddHHmmss)"
+            Move-Item -LiteralPath $Link -Destination $backup
+            Write-Host "backed up existing dir: $Link -> $backup"
+        }
+    }
+    New-Item -ItemType Junction -Path $Link -Target $Target | Out-Null
+    Write-Host "junction: $Link -> $Target"
+}
+
+Set-ConfigJunction (Join-Path $env:APPDATA 'gitui') (Join-Path $cfg 'gitui')
+Set-ConfigJunction (Join-Path $env:APPDATA 'bat')   (Join-Path $cfg 'bat')
+
+# VS Code: copy the managed files into %APPDATA%\Code\User.
+$vsSrc = Join-Path $cfg 'Code\User'
+$vsDst = Join-Path $env:APPDATA 'Code\User'
+if (Test-Path -LiteralPath $vsSrc) {
+    New-Item -ItemType Directory -Force -Path $vsDst | Out-Null
+    foreach ($f in @('settings.json', 'keybindings.json')) {
+        $s = Join-Path $vsSrc $f
+        if (Test-Path -LiteralPath $s) {
+            Copy-Item -LiteralPath $s -Destination (Join-Path $vsDst $f) -Force
+            Write-Host "copied: $f -> $vsDst"
+        }
+    }
+    $snip = Join-Path $vsSrc 'snippets'
+    if (Test-Path -LiteralPath $snip) {
+        Copy-Item -LiteralPath $snip -Destination $vsDst -Recurse -Force
+        Write-Host "copied: snippets -> $vsDst"
+    }
+}
+{{- end -}}

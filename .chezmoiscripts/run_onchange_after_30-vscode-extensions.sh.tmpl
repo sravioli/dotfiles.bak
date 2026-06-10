@@ -1,0 +1,18 @@
+{{- if ne .chezmoi.os "windows" -}}
+#!/usr/bin/env bash
+# Install VS Code extensions. Re-runs whenever the list changes.
+if ! command -v code >/dev/null 2>&1; then
+  echo 'code CLI not found; skipping extension install.'
+  exit 0
+fi
+installed="$(code --list-extensions)"
+for ext in \
+{{- range .vscode.extensions }}
+  "{{ . }}" \
+{{- end }}
+  ; do
+  if printf '%s\n' "$installed" | grep -qix "$ext"; then continue; fi
+  echo "==> code --install-extension $ext"
+  code --install-extension "$ext" --force
+done
+{{- end -}}

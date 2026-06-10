@@ -1,0 +1,28 @@
+{{- if ne .chezmoi.os "windows" -}}
+#!/usr/bin/env bash
+# Base toolset (best effort). Re-runs when this list changes.
+
+if command -v apt-get >/dev/null 2>&1; then
+  sudo apt-get update -y || true
+  sudo apt-get install -y \
+{{- range .packages.apt }}
+    {{ . }} \
+{{- end }}
+    || true
+fi
+
+# Ensure a default Rust toolchain, then install cargo-only tools.
+if ! command -v cargo >/dev/null 2>&1 && command -v rustup >/dev/null 2>&1; then
+  rustup default stable || true
+fi
+if command -v cargo >/dev/null 2>&1; then
+{{- range .packages.cargo }}
+  cargo install {{ . }} || true
+{{- end }}
+fi
+
+# oh-my-posh has no apt package.
+if ! command -v oh-my-posh >/dev/null 2>&1; then
+  curl -s https://ohmyposh.dev/install.sh | bash -s || true
+fi
+{{- end -}}

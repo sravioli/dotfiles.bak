@@ -1,0 +1,22 @@
+{{- if eq .chezmoi.os "windows" -}}
+# Install VS Code extensions. Re-runs whenever the list changes.
+$env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [Environment]::GetEnvironmentVariable('Path','User')
+$code = Get-Command code -ErrorAction SilentlyContinue
+if (-not $code) {
+    Write-Host 'code CLI not found; skipping extension install.'
+    return
+}
+$installed = & code --list-extensions
+$want = @(
+{{- range .vscode.extensions }}
+    '{{ . }}',
+{{- end }}
+    $null
+)
+foreach ($ext in $want) {
+    if (-not $ext) { continue }
+    if ($installed -contains $ext) { continue }
+    Write-Host "==> code --install-extension $ext"
+    & code --install-extension $ext --force
+}
+{{- end -}}
