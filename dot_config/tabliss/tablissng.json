@@ -1,0 +1,115 @@
+{
+  "background": {
+    "display": {
+      "blur": 0,
+      "luminosity": -0.3,
+      "nightDim": false,
+      "scale": true
+    },
+    "id": "4ZTyPy0pqQCQ",
+    "key": "background/image"
+  },
+  "data/4ZTyPy0pqQCQ": {
+    "paused": false,
+    "timeout": 0
+  },
+  "data/ZYzlBJu9YqB6": {
+    "input": ".Slot.topCentre {\n  margin-top: -0.75rem;\n}\n\n.Slot.bottomLeft {\n  margin-bottom: -4rem;\n}\n\n.Slot.bottomRight {\n  margin-bottom: -3.5rem;\n}"
+  },
+  "data/_xkOWZDpvpEb": {
+    "name": "",
+    "showDetails": false,
+    "units": "si"
+  },
+  "data/default-time": {
+    "hour12": false,
+    "mode": "digital",
+    "name": "",
+    "showDate": false,
+    "showDayPeriod": true,
+    "showMinutes": true,
+    "showSeconds": true,
+    "timeZone": "Europe/Rome"
+  },
+  "data/vhqZO2dPoFoc": {
+    "category": "developerexcuses"
+  },
+  "focus": false,
+  "locale": "en-GB",
+  "settingsIconPosition": "topLeft",
+  "timeZone": "Europe/Rome",
+  "widget/0KRo3T5k1RTH": null,
+  "widget/3aUPMgTdqKfb": null,
+  "widget/7JTUQmpv6jAB": null,
+  "widget/Cikrw09zp2Tc": null,
+  "widget/JFiHy04-t48k": null,
+  "widget/Md5xQ-kMpKLm": null,
+  "widget/MqErctyzDmGh": null,
+  "widget/NP4YBY_3nzZ1": null,
+  "widget/Rn_9VrQV5u2N": null,
+  "widget/XOsKbOUWOJzt": null,
+  "widget/ZYzlBJu9YqB6": {
+    "display": {
+      "position": "middleCentre"
+    },
+    "id": "ZYzlBJu9YqB6",
+    "key": "widget/css",
+    "order": 4
+  },
+  "widget/_xkOWZDpvpEb": {
+    "display": {
+      "colour": "#dbd7ba",
+      "fontFamily": "FiraCode Nerd Font",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "position": "topRight"
+    },
+    "id": "_xkOWZDpvpEb",
+    "key": "widget/weather",
+    "order": 1
+  },
+  "widget/default-greeting": null,
+  "widget/default-time": {
+    "display": {
+      "colour": "#dcd7ba",
+      "fontFamily": "FiraCode Nerd Font",
+      "fontSize": 16,
+      "isEditingPosition": false,
+      "position": "bottomLeft",
+      "scale": 1,
+      "x": -2.9999990463256836,
+      "y": 969.5000610351562
+    },
+    "id": "default-time",
+    "key": "widget/time",
+    "order": 0
+  },
+  "widget/iM8-FONpz7y3": null,
+  "widget/igbOs05oAOXN": null,
+  "widget/t3H0ufq1pyXw": null,
+  "widget/vhqZO2dPoFoc": {
+    "display": {
+      "colour": "#dcd7ba",
+      "fontFamily": "FiraCode Nerd Font",
+      "fontSize": 12,
+      "isEditingPosition": false,
+      "position": "bottomRight",
+      "x": 1703,
+      "y": 1011.5
+    },
+    "id": "vhqZO2dPoFoc",
+    "key": "widget/quote",
+    "order": 3
+  },
+  "highlightingEnabled": true,
+  "hideSettingsIcon": false,
+  "themePreference": "system",
+  "autoHideSettings": false,
+  "favicon": {
+    "mode": "default",
+    "url": "",
+    "data": null
+  },
+  "accent": "#3498db",
+  "version": 3
+}
