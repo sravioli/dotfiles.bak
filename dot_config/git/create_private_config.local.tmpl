@@ -1,0 +1,30 @@
+# Machine-local git configuration — NOT versioned.
+#
+# Seeded once by chezmoi (create_) from the values you entered at
+# `chezmoi init`. chezmoi never overwrites this file afterwards, so you can
+# freely edit it. Keep anything machine- or work-specific here:
+#   - identity / signing key
+#   - safe.directory entries
+#   - maintenance repos
+#   - work-only clone aliases (e.g. internal ADO orgs)
+
+[user]
+    name = {{ .gituser.name }}
+    email = {{ .gituser.email }}
+{{- if .gituser.signingkey }}
+    signingkey = {{ .gituser.signingkey }}
+{{- end }}
+
+# --- Examples (uncomment and adapt per machine) ---------------------------
+#
+# Work-only clone helper for an internal Azure DevOps org:
+# [alias]
+#     k = "!__clone() { git clone https://<user>@dev.azure.com/<org>/<project>/_git/$1; }; __clone"
+#
+# Trust specific local working copies:
+# [safe]
+#     directory = C:/path/to/repo
+#
+# Register repos for `git maintenance`:
+# [maintenance]
+#     repo = C:/path/to/repo

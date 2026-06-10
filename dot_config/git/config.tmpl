@@ -1,0 +1,118 @@
+# Portable git configuration — managed by chezmoi.
+#
+# Machine- and work-specific settings live in ~/.config/git/config.local
+# (identity, signing key, safe.directory, maintenance repos, work clone
+# aliases). That file is NOT versioned; it is seeded once per machine.
+
+[core]
+    editor = nvim
+    pager = delta
+    longpaths = true
+
+[include]
+    path = ~/.config/git/gitalias.txt
+    path = ~/.config/delta/kanagawa-wave.gitconfig
+    path = ~/.config/git/fzf.gitconfig
+    path = ~/.config/git/config.local
+
+[interactive]
+    diffFilter = delta --color-only
+
+[merge]
+    conflictstyle = zdiff3
+
+[diff]
+    colorMoved = default
+
+[delta]
+    features = kanagawa-wave
+    syntax-theme = kanagawa-wave
+    side-by-side = true
+    true-color = always
+    navigate = true    # use n and N to move between diff sections
+    hyperlinks = true
+    hyperlinks-file-link-format = "file://file/{path}:{line}"
+
+[help]
+    autocorrect = prompt
+
+[alias]
+    search-alias = "!f() { git aliases | rg $1; }; f"
+    sync-to-master = "!__git_sync_to_master() { \
+        set -e; \
+        orig=\"$(git symbolic-ref -q --short HEAD 2>/dev/null || true)\"; \
+        if [ -z \"${orig}\" ]; then \
+          echo 'Detached HEAD; aborting (no branch to return to).' >&2; exit 1; \
+        fi; \
+        default=\"$(git symbolic-ref -q --short refs/remotes/origin/HEAD 2>/dev/null | sed \"s@^origin/@@\")\"; \
+        if [ -z \"${default}\" ]; then \
+          if git show-ref --verify --quiet refs/heads/main; then \
+            default=main; \
+          elif git show-ref --verify --quiet refs/heads/master; then \
+            default=master; \
+          else \
+            echo 'Cannot determine default branch (origin/HEAD missing; no main/master).' >&2; exit 1; \
+          fi; \
+        fi; \
+        stash_made=0; \
+        stash_ref=\"\"; \
+        ts=\"$(date +%F_%H-%M-%S%z)\"; \
+        if ! git diff --quiet || ! git diff --cached --quiet || [ -n \"$(git ls-files --others --exclude-standard)\" ]; then \
+          git stash push -u -m \"sync stash [$ts] ($orig -> $default)\"; \
+          stash_made=1; \
+          stash_ref=\"$(git rev-parse -q --verify refs/stash)\"; \
+        else \
+          echo 'Working tree clean; no stash needed.'; \
+        fi; \
+        git fetch origin --prune --tags; \
+        if git show-ref --verify --quiet \"refs/heads/${default}\"; then \
+          git switch \"${default}\"; \
+        else \
+          git switch -c \"${default}\" --track \"origin/${default}\"; \
+        fi; \
+        git merge --ff-only \"origin/${default}\"; \
+        git switch \"${orig}\"; \
+        if [ \"${orig}\" != \"${default}\" ]; then \
+          git rebase \"${default}\"; \
+        fi; \
+        if [ \"${stash_made}\" -eq 1 ]; then \
+          git stash apply --index \"${stash_ref}\"; \
+          echo \"Applied stash (kept): ${stash_ref}\"; \
+          echo \"Drop manually when ready: git stash drop ${stash_ref}\"; \
+        fi; \
+        }; __git_sync_to_master"
+    blame-full = blame -CCCMwm
+    br = branch
+    brl = branch --list --verbose
+    brll = branch --list --all --all --verbose
+    brv = branch --list --verbose --verbose --color=always
+    latest = rev-parse HEAD
+    nuke = !git reset --hard HEAD && git clean -fdx --exclude .github --exclude openspec
+    ps = push
+    reauthor = "!__git_commit_reauthor() { git commit --amend --no-edit --author=$1; }; __git_commit_reauthor"
+    retcon = !git commit --amend --no-edit && git push --force-with-lease
+    rm-tag = "!__git_remove_tag() { git tag -d $1 && git push origin --delete $1; }; __git_remove_tag"
+    rm-tags = git select-tag | xargs -I {} git rm-tag {}
+    st = status --short --branch
+    sw = switch
+    swc = switch --create
+    swf = "!__git_switch_feature() { git switch --create feature/zenith/$1; }; __git_switch_feature"
+    sync = !git fetch --all --multiple --append --tags --prune --prune-tags --verbose && git pull
+    ui = !gitui
+    unstage = restore --staged
+
+{{ if eq .chezmoi.os "windows" -}}
+[credential "https://github.com"]
+    helper =
+    helper = !'C:/Program Files/GitHub CLI/gh.exe' auth git-credential
+[credential "https://gist.github.com"]
+    helper =
+    helper = !'C:/Program Files/GitHub CLI/gh.exe' auth git-credential
+{{- else -}}
+[credential "https://github.com"]
+    helper =
+    helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+    helper =
+    helper = !gh auth git-credential
+{{- end }}

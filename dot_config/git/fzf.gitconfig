@@ -1,0 +1,164 @@
+# vim: set filetype=gitconfig:
+#
+# fzf-powered interactive git aliases.
+# Requires: fzf (https://github.com/junegunn/fzf)
+#
+# Included from ~/.gitconfig via:
+#   [include]
+#     path = ~/.config/git/fzf.gitconfig
+
+[alias]
+
+  ## Base helpers ##
+  fzf = "!__git_fzf() { \
+    set -euo pipefail; \
+    fzf \
+      --smart-case \
+      --ansi \
+      --height=~65% --min-height=20 --layout='reverse' --margin 1 --padding 1 \
+      --color=fg:#DCD7BA,bg:#1F1F28,hl:#7E9CD8 \
+      --color=fg+:#C8C093,bg+:#2A2A37,hl+:#7FB4CA \
+      --color=gutter:#1F1F28,info:#E6C384,border:#54546D \
+      --color=prompt:#FF5D62,pointer:#957FB8,marker:#98BB6C \
+      --color=spinner:#957FB8,header:#658594:italic \
+      --color=preview-fg:#DCD7BA,preview-bg:#1F1F28 \
+      --color=label:#938AA9,query:#DCD7BA \
+      --prompt='❭ ' --marker=' ' --pointer='' --scrollbar='│' \
+      --border='rounded' --border-label=' git.fzf' --border-label-pos 2:top \
+      --preview-label='  preview' --preview-label-pos 2:top --preview-window='right,40%,border' \
+      --preview='cat {}' \
+      --multi --highlight-line --cycle --wrap=word --wrap-sign='󱞩' --tabstop=2 \
+      --info='inline-right' --no-separator --ghost='type something...' \
+      --list-border='rounded' --input-border='rounded' \
+      --header='<alt-p> to toggle preview' --header-first --header-label-pos=0:top \
+      --bind='alt-p:toggle-preview' \
+      --bind='ctrl-f:preview-down' \
+      --bind='ctrl-b:preview-up' \
+      --bind='alt-g:preview-top' \
+      --bind='alt-G:preview-bottom' \
+      --bind='ctrl-t:first' \
+      --bind='ctrl-b:last' \
+      \"$@\"; \
+  }; __git_fzf"
+
+  pluck = "!__git_pluck() { sed 's/^..//' | cut -d' ' -f \"${1:-1}\"; }; __git_pluck"
+
+  branch-list = "!__git_branch_list() { \
+    set -euo pipefail; \
+    w=$(git --no-pager branch --list --all --format='%(refname:short)' \
+      | awk '{ if (length > m) m = length } END { print m + 2 }'); \
+    git --no-pager branch --list --all --color --format=\"%(if)%(HEAD)%(then)%(color:green)%(else)%(if:equals=refs/remotes)%(refname:rstrip=-2)%(then)%(color:red)%(end)%(end)%(align:${w},left)%(refname:short)%(end)%(color:reset) %(color:yellow)%(objectname:short)%(color:reset) %(subject)\"; \
+  }; __git_branch_list"
+
+  ## Selectors ##
+  select-branch = "!__git_select_branch() { \
+    set -euo pipefail; \
+    git branch-list \
+      | git fzf --border-label=' Branches' \
+        --preview='git log --oneline --color --graph origin/HEAD..{1}' \
+        --bind $'focus:transform-preview-label(echo $ git log origin/HEAD..{1})' \
+        --bind 'ctrl-r:execute-silent(git fetch --prune)+reload(git branch-list)' \
+        --query=${1:-} \
+      | cut -d' ' -f1; \
+  }; __git_select_branch"
+
+  select-file = ""!git -P -c color.status=always s --short --show-stash --renames \
+    | git fzf --height=60% \
+        --border-label='󰻭 Stage file' \
+        --preview='echo {} | git pluck 2 | git diff --color' \
+        --preview-label='$ git diff' \
+        --bind='change:reload(git --no-pager -c color.status=always status --short --show-stash --renames)' \
+        --bind='alt-s:execute(echo {} | git pluck 2 | git add)+reload(git -P -c color.status=always s --short --show-stash --renames)' \
+        --bind='alt-u:execute(git restore --staged $(echo {} | git pluck 2))+reload(git -P -c color.status=always s --short --show-stash --renames)' \
+        --with-shell='powershell.exe -NoProfile -NoLogo -NonInteractive -Command' \
+    | git pluck 2""
+
+  select-commit = "!git log --oneline --color=always --all \
+    | git fzf --multi --border-label=' Commits' \
+        --preview='echo {} | cut -d\" \" -f1 | xargs git show --color=always' \
+        --preview-label='$ git show' \
+    | cut -d' ' -f1"
+
+  select-stash = "!git stash list --color=always \
+    | git fzf --border-label='󱉳 Stashes' \
+        --preview='echo {} | cut -d: -f1 | xargs git stash show --color=always -p' \
+        --preview-label='$ git stash show' \
+    | cut -d: -f1"
+
+  select-tag = "!git tag --sort=-v:refname \
+    | git fzf --border-label='󰓹 Tags' \
+        --preview='git log --oneline --color=always -10 {}' \
+        --preview-label='$ git log'"
+
+  select-remote-branch = "!git --no-pager branch -r --color=always \
+    | git fzf --border-label=' Remote branches' \
+        --preview='echo {} | sed \"s/^..//\" | xargs git log --oneline --color=always -20' \
+        --preview-label='$ git log' \
+    | sed 's/^..//'"
+
+  select-worktree = "!git worktree list \
+    | git fzf --border-label=' Worktrees' \
+        --preview='git log --oneline --color=always -10 $(echo {} | awk \"{print \\$3}\" | tr -d \"[]\")' \
+        --preview-label='$ git log'"
+
+  ## Interactive status ##
+
+  stt = !"git --no-pager -c color.status=always status --short --branch --show-stash --renames \
+    | git fzf \
+      --height=100% \
+      --header-lines=1 \
+      --header='Keybinds: <alt-p> toggle preview / <alt-s> stage current / <alt-u> unstage current' \
+      --preview='git diff --color=always $(echo {} | git pluck 2)' \
+      --bind='ctrl-r:reload(git --no-pager -c color.status=always status --short --show-stash --renames)' \
+      --bind='alt-s:execute-silent(git add \"$(echo {} | git pluck 2)\")+reload(git --no-pager -c color.status=always status --short --show-stash --renames)' \
+      --bind='alt-u:execute-silent(git restore --staged \"$(echo {} | git pluck 2)\")+reload(git -c status.color=always status --short)' \
+      --bind='alt-c:execute(git -c core.editor=vim commit)' \
+      --with-shell='powershell.exe -NoProfile -NoLogo -NonInteractive -Command'"
+
+  ## Branch actions ##
+
+  sww = "!__git_switch() { \
+    set -euo pipefail; \
+    selection="$(git select-branch \"$@\")"; \
+    [ -z \"${selection}\" ] && echo 'No branch selected. Aborting switch' && exit 1; \
+    if [[ \"$selection\" == remotes/* ]]; then \
+      rb=\"${selection#remotes/}\"; \
+      lb=\"${rb#*/}\"; \
+      if git show-ref --verify --quiet \"refs/heads/$lb\"; then \
+        git switch \"$lb\"; \
+      else \
+        git switch --track \"$rb\"; \
+      fi; \
+    else \
+      git switch \"$selection\"; \
+    fi; \
+  }; __git_switch"
+
+  brdel = "!git select-branch | xargs git branch -d"
+
+  rbb = !git rebase "$(git select-branch)"
+
+  ## Commit actions ##
+
+  cpp = "!git select-commit | xargs -I{} git cherry-pick {}"
+
+  fixup-fzf = "!commit=$(git select-commit) && git commit --fixup=$commit && GIT_EDITOR=true git rebase -i --autosquash $commit~"
+
+  rvv = "!git select-commit | xargs -I{} git revert {}"
+
+  show-fzf = "!git select-commit | xargs git show"
+
+  ## Stash actions ##
+
+  stash-apply = "!git select-stash | xargs git stash apply"
+
+  stash-pop = "!git select-stash | xargs git stash pop"
+
+  stash-drop = "!git select-stash | xargs git stash drop"
+
+  ## Log browser ##
+
+  browse = "!git log --oneline --color=always --graph --all \
+    | git fzf --no-multi --height=100% --border-label=' Log' \
+        --preview='echo {} | grep -o \"[a-f0-9]\\{7,\\}\" | head -1 | xargs git show --color=always --stat' \
+        --preview-label='$ git show --stat'"
