@@ -5,6 +5,7 @@ packages:
   # Windows — installed with `winget install`.
   winget:
     # Core
+    - twpayne.chezmoi
     - Git.Git
     - Microsoft.PowerShell
     - Microsoft.VisualStudioCode
