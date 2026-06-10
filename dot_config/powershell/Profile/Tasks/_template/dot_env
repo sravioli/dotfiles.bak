@@ -1,0 +1,10 @@
+# Environment Configuration
+# 
+# This file contains environment variables for the task.
+# Format: KEY=value
+# Comments start with #
+
+# Example variables (customize for your task)
+EXAMPLE_VAR=example_value
+APP_PATH=C:\Program Files\MyApp\app.exe
+DEBUG=false

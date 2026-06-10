@@ -1,0 +1,28 @@
+{
+  "trigger": {
+    "type": "event",
+    "eventLog": "Application",
+    "eventId": 1000,
+    "provider": "Application"
+  },
+  "principal": {
+    "userId": "CURRENT_USER",
+    "logonType": "Interactive",
+    "runLevel": "Limited"
+  },
+  "settings": {
+    "allowStartIfOnBatteries": true,
+    "dontStopIfGoingOnBatteries": true,
+    "startWhenAvailable": true,
+    "dontStopOnIdleEnd": true,
+    "executionTimeLimit": "PT1H",
+    "hidden": true
+  },
+  "execution": {
+    "executable": "pwsh.exe",
+    "baseArguments": "-NonInteractive -NoLogo -NoProfileLoadTime -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden",
+    "additionalArguments": "-Verbose"
+  },
+  "taskNameTemplate": "ProfileTask_{FolderName}",
+  "descriptionTemplate": "Automated task for {FolderName}"
+}

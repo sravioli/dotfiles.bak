@@ -1,0 +1,22 @@
+{
+  "principal": {
+    "userId": "{{ .chezmoi.username | splitList "\\" | last }}",
+    "logonType": "Interactive",
+    "runLevel": "Limited"
+  },
+  "settings": {
+    "allowStartIfOnBatteries": true,
+    "dontStopIfGoingOnBatteries": true,
+    "startWhenAvailable": true,
+    "dontStopOnIdleEnd": true,
+    "executionTimeLimit": "00:05:00",
+    "hidden": true
+  },
+  "execution": {
+    "executable": "pwsh.exe",
+    "baseArguments": "-NonInteractive -NoLogo -NoProfileLoadTime -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden",
+    "additionalArguments": ""
+  },
+  "taskNameTemplate": "ProfileTask_{FolderName}",
+  "descriptionTemplate": "Automated task for {FolderName} event"
+}
