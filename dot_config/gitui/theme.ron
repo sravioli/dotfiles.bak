@@ -1,0 +1,10 @@
+(
+    // Kanagawa Wave
+    diff_line_add: Some("#76946A"),
+    diff_line_delete: Some("#C34043"),
+    diff_file_added: Some("#76946A"),
+    diff_file_removed: Some("#C34043"),
+    diff_file_moved: Some("#DCA561"),
+    diff_file_modified: Some("#658594"),
+    danger_fg: Some("#E82424"),
+)
