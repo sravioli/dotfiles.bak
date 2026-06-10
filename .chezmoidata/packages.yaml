@@ -32,8 +32,10 @@ packages:
     - Rustlang.Rustup
     - astral-sh.uv
     - BrechtSanders.WinLibs.POSIX.UCRT   # gcc/g++ (MinGW-w64)
-    # Windows desktop utility
+    # Windows desktop apps
     - AltSnap.AltSnap
+    - Vivaldi.Vivaldi
+    - Postman.Postman
 
   # Windows: optional work-laptop apps. Installed only when you answer "yes" to
   # the `installWorkApps` prompt at `chezmoi init` (defaults to yes on a machine
