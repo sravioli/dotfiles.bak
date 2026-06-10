@@ -1,0 +1,16 @@
+# Upstream repos cloned directly into place by chezmoi.
+# Refreshed at most weekly; run `chezmoi --refresh-externals apply` to force.
+
+{{ if eq .chezmoi.os "windows" -}}
+["AppData/Local/nvim"]
+{{- else -}}
+[".config/nvim"]
+{{- end }}
+    type = "git-repo"
+    url = "https://github.com/sravioli/nvim.git"
+    refreshPeriod = "168h"
+
+[".config/wezterm"]
+    type = "git-repo"
+    url = "https://github.com/sravioli/wezterm.git"
+    refreshPeriod = "168h"

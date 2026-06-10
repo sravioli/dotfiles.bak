@@ -1,0 +1,3 @@
+# Repo metadata — present in the source repo, never applied to $HOME.
+/README.md
+/LICENSE

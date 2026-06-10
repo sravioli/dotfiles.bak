@@ -1,0 +1,22 @@
+{{- $name := promptStringOnce . "gituser.name" "Git author name" -}}
+{{- $email := promptStringOnce . "gituser.email" "Git author email" -}}
+{{- $signingkey := promptStringOnce . "gituser.signingkey" "Git signing key id (blank for none)" "" -}}
+{{- $machine := promptStringOnce . "machine" "Machine type (work/personal)" "personal" -}}
+
+# chezmoi configuration — generated at `chezmoi init`.
+# Prompted values are stored here (this file is local and never committed).
+
+[data]
+    machine = {{ $machine | quote }}
+
+[data.gituser]
+    name = {{ $name | quote }}
+    email = {{ $email | quote }}
+    signingkey = {{ $signingkey | quote }}
+
+# Run *.ps1 scripts with Windows PowerShell, which is guaranteed present on a
+# fresh Windows machine (pwsh 7 may not be installed yet during bootstrap).
+# Scripts are kept 5.1-compatible.
+[interpreters.ps1]
+    command = "powershell"
+    args = ["-NoLogo", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass"]

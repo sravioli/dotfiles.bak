@@ -1,0 +1,92 @@
+# Package + extension manifest consumed by the bootstrap scripts in
+# .chezmoiscripts. Edit here; the scripts iterate these lists.
+
+packages:
+  # Windows — installed with `winget install`.
+  winget:
+    - Git.Git
+    - Microsoft.PowerShell
+    - Microsoft.VisualStudioCode
+    - GitHub.cli
+    - Neovim.Neovim
+    - wez.wezterm
+    - StephanDilly.gitui
+    - sharkdp.bat
+    - dandavison.delta
+    - junegunn.fzf
+    - ajeetdsouza.zoxide
+    - BurntSushi.ripgrep.MSVC
+    - JanDeDobbeleer.OhMyPosh
+    - OpenJS.NodeJS
+    - Rustlang.Rustup
+
+  # Linux — best effort. Installed with `apt-get install`.
+  apt:
+    - git
+    - neovim
+    - ripgrep
+    - fzf
+    - bat
+    - zoxide
+    - nodejs
+    - npm
+
+  # Linux — installed with `cargo install` (not reliably packaged in apt).
+  cargo:
+    - gitui
+    - git-delta
+
+vscode:
+  extensions:
+    - aaron-bond.better-comments
+    - adrianwilczynski.namespace
+    - albert.tabout
+    - analysis-services.powerbi-modeling-mcp
+    - angular.ng-template
+    - asvetliakov.vscode-neovim
+    - bubuabu.busted-test-explorer
+    - chukwuamaka.csvtojson-converter
+    - donjayamanne.githistory
+    - esbenp.prettier-vscode
+    - fdscend.vscode-markdown-obsidian-alert
+    - geoffreyolsonjr.obsidian-navigation
+    - harrydowning.yaml-embedded-languages
+    - ibm.output-colorizer
+    - jep-a.lua-plus
+    - johnnymorganz.stylua
+    - jorgeserrano.vscode-csharp-snippets
+    - k--kato.docomment
+    - kamikillerto.vscode-colorize
+    - kampfkarren.selene-vscode
+    - mccarter.start-git-bash
+    - mechatroner.rainbow-csv
+    - metaphore.kanagawa-vscode-color-theme
+    - ms-azuretools.vscode-containers
+    - ms-dotnettools.csdevkit
+    - ms-dotnettools.csharp
+    - ms-dotnettools.dotnet-maui
+    - ms-dotnettools.vscode-dotnet-runtime
+    - ms-vscode-remote.remote-containers
+    - ms-vscode.cmake-tools
+    - ms-vscode.cpp-devtools
+    - ms-vscode.cpptools
+    - ms-vscode.cpptools-extension-pack
+    - ms-vscode.cpptools-themes
+    - ms-vscode.powershell
+    - ms-vscode.vscode-chat-customizations-evaluations
+    - ms-vscode.vscode-typescript-next
+    - openai.chatgpt
+    - oracle.oracle-java
+    - pkief.material-icon-theme
+    - pombadev.pbbs
+    - redhat.vscode-yaml
+    - satoren.lualint
+    - sumneko.lua
+    - tamasfe.even-better-toml
+    - trixnz.vscode-lua
+    - typescriptteam.native-preview
+    - usernamehw.errorlens
+    - vin-liberty.powershell-snippets
+    - xadillax.viml
+    - yinfei.luahelper
+    - yoavbls.pretty-ts-errors
