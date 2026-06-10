@@ -1,0 +1,59 @@
+# Kanagawa Dragon - delta theme
+# https://github.com/rebelot/kanagawa.nvim
+#
+# Usage:
+#   [include]
+#       path = /path/to/extras/delta/kanagawa-dragon.gitconfig
+#   [delta]
+#       features = kanagawa-dragon
+
+[delta "kanagawa-dragon"]
+    dark = true
+    syntax-theme = Kanagawa Dragon
+    # Diff
+    minus-style = syntax "#43242B"
+    minus-non-emph-style = syntax "#43242B"
+    minus-emph-style = bold "#C34043" "#43242B"
+    minus-empty-line-marker-style = normal "#3f0001"
+    zero-style = syntax
+    plus-style = syntax "#2B3328"
+    plus-non-emph-style = syntax "#2B3328"
+    plus-emph-style = bold "#76946A" "#2B3328"
+    plus-empty-line-marker-style = normal "#002800"
+    whitespace-error-style = reverse "#E82424"
+    # Commit and file
+    commit-style = bold italic "#8ba4b0"
+    commit-decoration-style = none
+    file-style = bold "#c4b28a"
+    file-decoration-style = "#625e5a" ul
+    file-added-label = [+]
+    file-modified-label = [~]
+    file-removed-label = [-]
+    file-renamed-label = [→]
+    file-copied-label = [C]
+    # Hunk header
+    hunk-header-style = syntax
+    hunk-header-decoration-style = "#625e5a" ul
+    hunk-header-file-style = "#c4b28a"
+    hunk-header-line-number-style = "#8992a7"
+    # Line numbers
+    line-numbers = true
+    line-numbers-left-format = " {nm:>3} │"
+    line-numbers-right-format = " {np:>3} │"
+    line-numbers-left-style = "#282727"
+    line-numbers-right-style = "#282727"
+    line-numbers-minus-style = bold "#C34043"
+    line-numbers-plus-style = bold "#76946A"
+    line-numbers-zero-style = italic "#625e5a"
+    # Blame
+    blame-palette = "#0d0c0c" "#12120f" "#181616" "#282727"
+    blame-code-style = syntax
+    blame-separator-style = "#737c73"
+    blame-format = "{author:<18} ({commit:>7}) │{timestamp:^16}│ "
+    # Merge conflicts
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
+    merge-conflict-ours-diff-header-style = "#c4b28a" bold
+    merge-conflict-ours-diff-header-decoration-style = "#625e5a" box
+    merge-conflict-theirs-diff-header-style = "#c4b28a" bold
+    merge-conflict-theirs-diff-header-decoration-style = "#625e5a" box

@@ -1,0 +1,59 @@
+# Kanagawa Lotus - delta theme
+# https://github.com/rebelot/kanagawa.nvim
+#
+# Usage:
+#   [include]
+#       path = /path/to/extras/delta/kanagawa-lotus.gitconfig
+#   [delta]
+#       features = kanagawa-lotus
+
+[delta "kanagawa-lotus"]
+    light = true
+    syntax-theme = Kanagawa Lotus
+    # Diff
+    minus-style = syntax "#d9a594"
+    minus-non-emph-style = syntax "#d9a594"
+    minus-emph-style = bold "#d7474b" "#d9a594"
+    minus-empty-line-marker-style = normal "#ecd5ca"
+    zero-style = syntax
+    plus-style = syntax "#b7d0ae"
+    plus-non-emph-style = syntax "#b7d0ae"
+    plus-emph-style = bold "#6e915f" "#b7d0ae"
+    plus-empty-line-marker-style = normal "#d4e8ce"
+    whitespace-error-style = reverse "#e82424"
+    # Commit and file
+    commit-style = bold italic "#4d699b"
+    commit-decoration-style = none
+    file-style = bold "#77713f"
+    file-decoration-style = "#a09cac" ul
+    file-added-label = [+]
+    file-modified-label = [~]
+    file-removed-label = [-]
+    file-renamed-label = [→]
+    file-copied-label = [C]
+    # Hunk header
+    hunk-header-style = syntax
+    hunk-header-decoration-style = "#a09cac" ul
+    hunk-header-file-style = "#77713f"
+    hunk-header-line-number-style = "#624c83"
+    # Line numbers
+    line-numbers = true
+    line-numbers-left-format = " {nm:>3} │"
+    line-numbers-right-format = " {np:>3} │"
+    line-numbers-left-style = "#e7dba0"
+    line-numbers-right-style = "#e7dba0"
+    line-numbers-minus-style = bold "#d7474b"
+    line-numbers-plus-style = bold "#6e915f"
+    line-numbers-zero-style = italic "#a09cac"
+    # Blame
+    blame-palette = "#d5cea3" "#dcd5ac" "#e5ddb0" "#f2ecbc"
+    blame-code-style = syntax
+    blame-separator-style = "#8a8980"
+    blame-format = "{author:<18} ({commit:>7}) │{timestamp:^16}│ "
+    # Merge conflicts
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
+    merge-conflict-ours-diff-header-style = "#77713f" bold
+    merge-conflict-ours-diff-header-decoration-style = "#a09cac" box
+    merge-conflict-theirs-diff-header-style = "#77713f" bold
+    merge-conflict-theirs-diff-header-decoration-style = "#a09cac" box
