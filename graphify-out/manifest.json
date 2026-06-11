@@ -1,0 +1,202 @@
+{
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\Code\\User\\keybindings.json": {
+    "mtime": 1781183297.442531,
+    "ast_hash": "5d2f66257b55d19ea2e5f22d67688637",
+    "semantic_hash": "5d2f66257b55d19ea2e5f22d67688637"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\Code\\User\\settings.json": {
+    "mtime": 1781183297.4435308,
+    "ast_hash": "61acfc7d31d5ecc68974f542ef8b2c5a",
+    "semantic_hash": "61acfc7d31d5ecc68974f542ef8b2c5a"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\oh-my-posh\\kanagawa-wave.omp.json": {
+    "mtime": 1781183297.48441,
+    "ast_hash": "c0d1fe7158c01bf90d4833c628bbf518",
+    "semantic_hash": "c0d1fe7158c01bf90d4833c628bbf518"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Microsoft.PowerShell_profile.ps1": {
+    "mtime": 1781183297.4874096,
+    "ast_hash": "67a4056a7f3badf691f1b743ed027fab",
+    "semantic_hash": "67a4056a7f3badf691f1b743ed027fab"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Private\\Get-CompletionRoot.ps1": {
+    "mtime": 1781183297.49931,
+    "ast_hash": "2662fc7c3ab4b62703c2fb7e092af6a4",
+    "semantic_hash": "2662fc7c3ab4b62703c2fb7e092af6a4"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Private\\Read-CompletionManifest.ps1": {
+    "mtime": 1781183297.5023074,
+    "ast_hash": "332791404efacccb2d20bf2d54686787",
+    "semantic_hash": "332791404efacccb2d20bf2d54686787"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Private\\Write-CompletionManifest.ps1": {
+    "mtime": 1781183297.5055044,
+    "ast_hash": "0abb60d2a2ac2028d9dbfadf61cf8b9a",
+    "semantic_hash": "0abb60d2a2ac2028d9dbfadf61cf8b9a"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Public\\Initialize-Completion.ps1": {
+    "mtime": 1781183297.511498,
+    "ast_hash": "073a397ca988925713db9467155a1702",
+    "semantic_hash": "073a397ca988925713db9467155a1702"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Public\\Remove-Completion.ps1": {
+    "mtime": 1781183297.5147078,
+    "ast_hash": "69195300fcf9d335b5f572a5318b6ff1",
+    "semantic_hash": "69195300fcf9d335b5f572a5318b6ff1"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Public\\Save-Completion.ps1": {
+    "mtime": 1781183297.5189784,
+    "ast_hash": "c329c3ae204a9b529c1fe791ce5ae3dd",
+    "semantic_hash": "c329c3ae204a9b529c1fe791ce5ae3dd"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Public\\Test-Completion.ps1": {
+    "mtime": 1781183297.521994,
+    "ast_hash": "89da4e16dc52523e9be17c64f1faad9a",
+    "semantic_hash": "89da4e16dc52523e9be17c64f1faad9a"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Public\\Update-Completions.ps1": {
+    "mtime": 1781183297.5239892,
+    "ast_hash": "d753eed3f096cdb7b937d2c854942e79",
+    "semantic_hash": "d753eed3f096cdb7b937d2c854942e79"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Tests\\CompletionManager.Module.Tests.ps1": {
+    "mtime": 1781183297.528173,
+    "ast_hash": "62107b7bc9d7ffb09a4b539392e42cbb",
+    "semantic_hash": "62107b7bc9d7ffb09a4b539392e42cbb"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Tests\\Initialize-Completion.Tests.ps1": {
+    "mtime": 1781183297.5306852,
+    "ast_hash": "573ce23d3ad7b8ebd1c721b01cffd73b",
+    "semantic_hash": "573ce23d3ad7b8ebd1c721b01cffd73b"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Tests\\Private.Helpers.Tests.ps1": {
+    "mtime": 1781183297.534034,
+    "ast_hash": "abcbb79c198cf9f845def24a74a55223",
+    "semantic_hash": "abcbb79c198cf9f845def24a74a55223"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Tests\\Remove-Completion.Tests.ps1": {
+    "mtime": 1781183297.5370338,
+    "ast_hash": "e52c86b307bec56c4b31fc027591aff2",
+    "semantic_hash": "e52c86b307bec56c4b31fc027591aff2"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Tests\\Save-Completion.Tests.ps1": {
+    "mtime": 1781183297.5390356,
+    "ast_hash": "4dd1e120581634cc5da19f39a35f4259",
+    "semantic_hash": "4dd1e120581634cc5da19f39a35f4259"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Tests\\Test-Completion.Tests.ps1": {
+    "mtime": 1781183297.5420318,
+    "ast_hash": "4cddbcb4b03ad1430d8fba38f734c583",
+    "semantic_hash": "4cddbcb4b03ad1430d8fba38f734c583"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Modules\\CompletionManager\\Tests\\Update-Completions.Tests.ps1": {
+    "mtime": 1781183297.547014,
+    "ast_hash": "bbd96f28623e83313ddffd3205a7e53a",
+    "semantic_hash": "bbd96f28623e83313ddffd3205a7e53a"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Config\\Aliases.ps1": {
+    "mtime": 1781183297.55087,
+    "ast_hash": "898692ed35bd108bb75be5ea5ab12df3",
+    "semantic_hash": "898692ed35bd108bb75be5ea5ab12df3"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Config\\Environment.ps1": {
+    "mtime": 1781183297.5553663,
+    "ast_hash": "aff6db1d7378467fb5688541a5365323",
+    "semantic_hash": "aff6db1d7378467fb5688541a5365323"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Config\\PSReadLineConfig.ps1": {
+    "mtime": 1781183297.5600238,
+    "ast_hash": "44d94ed80b5651853a9878e7bee41eb1",
+    "semantic_hash": "44d94ed80b5651853a9878e7bee41eb1"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Functions\\AdbTools.ps1": {
+    "mtime": 1781183297.5655363,
+    "ast_hash": "a9d8b054dbdbf9ce40e5b49c596cda9d",
+    "semantic_hash": "a9d8b054dbdbf9ce40e5b49c596cda9d"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Functions\\Development.ps1": {
+    "mtime": 1781183297.569289,
+    "ast_hash": "5e806657602c1b7cf55867db9dd869f7",
+    "semantic_hash": "5e806657602c1b7cf55867db9dd869f7"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Functions\\FileSystem.ps1": {
+    "mtime": 1781183297.5731533,
+    "ast_hash": "1f204903deeb6a74487a22afb63865f6",
+    "semantic_hash": "1f204903deeb6a74487a22afb63865f6"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Functions\\Git.ps1": {
+    "mtime": 1781183297.5771866,
+    "ast_hash": "bcf56bf6680c0acb3ace39823490391f",
+    "semantic_hash": "bcf56bf6680c0acb3ace39823490391f"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Functions\\GitHubGpgKey.ps1": {
+    "mtime": 1781183297.5831876,
+    "ast_hash": "166c37befaa7fbbe875791f44997d2a4",
+    "semantic_hash": "166c37befaa7fbbe875791f44997d2a4"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Functions\\Utilities.ps1": {
+    "mtime": 1781183297.5874193,
+    "ast_hash": "e8fc93e398c0fd23e99faecc9ed7da87",
+    "semantic_hash": "e8fc93e398c0fd23e99faecc9ed7da87"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Tasks\\Create.ps1": {
+    "mtime": 1781183297.5925038,
+    "ast_hash": "3dbcb2b029a35e197e505cbe0d2cac9e",
+    "semantic_hash": "3dbcb2b029a35e197e505cbe0d2cac9e"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Tasks\\_lib\\Test-TaskHelpers.ps1": {
+    "mtime": 1781183297.6160562,
+    "ast_hash": "79d2d47f39c31b3753be1323618012d7",
+    "semantic_hash": "79d2d47f39c31b3753be1323618012d7"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Tasks\\_template\\Run.ps1": {
+    "mtime": 1781183297.6279404,
+    "ast_hash": "fbeeb7601ecbcef02a937e4c4c872cbf",
+    "semantic_hash": "fbeeb7601ecbcef02a937e4c4c872cbf"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Tasks\\_template\\task.config.json": {
+    "mtime": 1781183297.6340394,
+    "ast_hash": "cd49616dc802c70d983a556cc74c8791",
+    "semantic_hash": "cd49616dc802c70d983a556cc74c8791"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Themes\\kanagawa-wave.ps1": {
+    "mtime": 1781183297.6423595,
+    "ast_hash": "9e0f8aab7f19927219b180f2bdbf5978",
+    "semantic_hash": "9e0f8aab7f19927219b180f2bdbf5978"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\powershell.config.json": {
+    "mtime": 1781183297.6446693,
+    "ast_hash": "d2144bda31c27dbebccd7d015e8aeb10",
+    "semantic_hash": "d2144bda31c27dbebccd7d015e8aeb10"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\tabliss\\tablissng.json": {
+    "mtime": 1781183297.6484513,
+    "ast_hash": "3c9c88c5d6869cf58f9287713ec0d09b",
+    "semantic_hash": "3c9c88c5d6869cf58f9287713ec0d09b"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\.chezmoidata\\packages.yaml": {
+    "mtime": 1781183297.4245462,
+    "ast_hash": "7b54ec419fe033c1f9da192a6ce60ece",
+    "semantic_hash": "7b54ec419fe033c1f9da192a6ce60ece"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\README.md": {
+    "mtime": 1781183297.44053,
+    "ast_hash": "db6e4ab74bcc8eadc961452377688f47",
+    "semantic_hash": "db6e4ab74bcc8eadc961452377688f47"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\git\\gitalias.txt": {
+    "mtime": 1781183297.4718714,
+    "ast_hash": "a775db1007c44ba1751b13d59317809b",
+    "semantic_hash": "a775db1007c44ba1751b13d59317809b"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Tasks\\README.md": {
+    "mtime": 1781183297.5959063,
+    "ast_hash": "3adc5bc5ea176985cd36dd21cb600dd8",
+    "semantic_hash": "3adc5bc5ea176985cd36dd21cb600dd8"
+  },
+  "C:\\Users\\Simone.Fidanza\\source\\repos\\copilot-worktrees\\chezmoi\\simone-fidanza-wkl-supreme-couscous\\dot_config\\powershell\\Profile\\Tasks\\_template\\README.md": {
+    "mtime": 1781183297.624259,
+    "ast_hash": "33c198678be5f56684afbeeb2e6c3988",
+    "semantic_hash": "33c198678be5f56684afbeeb2e6c3988"
+  }
+}

@@ -1,0 +1,2989 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "cross_platform_package_installation",
+        "label": "Cross-Platform Package Installation",
+        "nodes": [
+          "chezmoidata_packages_manifest",
+          "chezmoidata_packages_winget",
+          "chezmoidata_packages_apt",
+          "chezmoidata_packages_cargo"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": ".chezmoidata/packages.yaml"
+      },
+      {
+        "id": "powershell_task_execution_system",
+        "label": "PowerShell Task Execution System",
+        "nodes": [
+          "tasks_readme_create_ps1",
+          "tasks_readme_taskhelpers",
+          "tasks_readme_three_tier_config"
+        ],
+        "relation": "implement",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "dot_config/powershell/Profile/Tasks/README.md"
+      },
+      {
+        "id": "chezmoi_machine_initialization_flow",
+        "label": "Chezmoi Machine Initialization Flow",
+        "nodes": [
+          "readme_chezmoi_bootstrap",
+          "readme_work_personal_split",
+          "chezmoidata_packages_wingetwork"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "README.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "kanagawa-wave.omp.json",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp",
+      "community": 1,
+      "norm_label": "kanagawa-wave.omp.json"
+    },
+    {
+      "label": "$schema",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_schema",
+      "community": 1,
+      "norm_label": "$schema"
+    },
+    {
+      "label": "palette",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette",
+      "community": 0,
+      "norm_label": "palette"
+    },
+    {
+      "label": "black",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_black",
+      "community": 0,
+      "norm_label": "black"
+    },
+    {
+      "label": "blue",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_blue",
+      "community": 0,
+      "norm_label": "blue"
+    },
+    {
+      "label": "bright-black",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_bright_black",
+      "community": 0,
+      "norm_label": "bright-black"
+    },
+    {
+      "label": "bright-blue",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_bright_blue",
+      "community": 0,
+      "norm_label": "bright-blue"
+    },
+    {
+      "label": "bright-cyan",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_bright_cyan",
+      "community": 0,
+      "norm_label": "bright-cyan"
+    },
+    {
+      "label": "bright-green",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_bright_green",
+      "community": 0,
+      "norm_label": "bright-green"
+    },
+    {
+      "label": "bright-magenta",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_bright_magenta",
+      "community": 0,
+      "norm_label": "bright-magenta"
+    },
+    {
+      "label": "bright-red",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_bright_red",
+      "community": 0,
+      "norm_label": "bright-red"
+    },
+    {
+      "label": "bright-white",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_bright_white",
+      "community": 0,
+      "norm_label": "bright-white"
+    },
+    {
+      "label": "bright-yellow",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_bright_yellow",
+      "community": 0,
+      "norm_label": "bright-yellow"
+    },
+    {
+      "label": "cyan",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_cyan",
+      "community": 0,
+      "norm_label": "cyan"
+    },
+    {
+      "label": "diag-error",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_diag_error",
+      "community": 0,
+      "norm_label": "diag-error"
+    },
+    {
+      "label": "diag-hint",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_diag_hint",
+      "community": 0,
+      "norm_label": "diag-hint"
+    },
+    {
+      "label": "diag-info",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_diag_info",
+      "community": 0,
+      "norm_label": "diag-info"
+    },
+    {
+      "label": "diag-ok",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_diag_ok",
+      "community": 0,
+      "norm_label": "diag-ok"
+    },
+    {
+      "label": "diag-warning",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_diag_warning",
+      "community": 0,
+      "norm_label": "diag-warning"
+    },
+    {
+      "label": "git-added",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_git_added",
+      "community": 0,
+      "norm_label": "git-added"
+    },
+    {
+      "label": "git-changed",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_git_changed",
+      "community": 0,
+      "norm_label": "git-changed"
+    },
+    {
+      "label": "git-removed",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_git_removed",
+      "community": 0,
+      "norm_label": "git-removed"
+    },
+    {
+      "label": "green",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_green",
+      "community": 0,
+      "norm_label": "green"
+    },
+    {
+      "label": "magenta",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_magenta",
+      "community": 0,
+      "norm_label": "magenta"
+    },
+    {
+      "label": "none",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_none",
+      "community": 0,
+      "norm_label": "none"
+    },
+    {
+      "label": "red",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_red",
+      "community": 0,
+      "norm_label": "red"
+    },
+    {
+      "label": "special",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_special",
+      "community": 0,
+      "norm_label": "special"
+    },
+    {
+      "label": "white",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_white",
+      "community": 0,
+      "norm_label": "white"
+    },
+    {
+      "label": "yellow",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_palette_yellow",
+      "community": 0,
+      "norm_label": "yellow"
+    },
+    {
+      "label": "valid_line",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_valid_line",
+      "community": 1,
+      "norm_label": "valid_line"
+    },
+    {
+      "label": "template",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_valid_line_template",
+      "community": 1,
+      "norm_label": "template"
+    },
+    {
+      "label": "foreground",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_valid_line_foreground",
+      "community": 1,
+      "norm_label": "foreground"
+    },
+    {
+      "label": "background",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_valid_line_background",
+      "community": 1,
+      "norm_label": "background"
+    },
+    {
+      "label": "secondary_prompt",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_secondary_prompt",
+      "community": 1,
+      "norm_label": "secondary_prompt"
+    },
+    {
+      "label": "template",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_secondary_prompt_template",
+      "community": 1,
+      "norm_label": "template"
+    },
+    {
+      "label": "foreground",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_secondary_prompt_foreground",
+      "community": 1,
+      "norm_label": "foreground"
+    },
+    {
+      "label": "background",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_secondary_prompt_background",
+      "community": 1,
+      "norm_label": "background"
+    },
+    {
+      "label": "error_line",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_error_line",
+      "community": 1,
+      "norm_label": "error_line"
+    },
+    {
+      "label": "template",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_error_line_template",
+      "community": 1,
+      "norm_label": "template"
+    },
+    {
+      "label": "foreground",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_error_line_foreground",
+      "community": 1,
+      "norm_label": "foreground"
+    },
+    {
+      "label": "background",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_error_line_background",
+      "community": 1,
+      "norm_label": "background"
+    },
+    {
+      "label": "console_title_template",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_console_title_template",
+      "community": 1,
+      "norm_label": "console_title_template"
+    },
+    {
+      "label": "pwd",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_pwd",
+      "community": 1,
+      "norm_label": "pwd"
+    },
+    {
+      "label": "blocks",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_blocks",
+      "community": 1,
+      "norm_label": "blocks"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L194",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_version",
+      "community": 1,
+      "norm_label": "version"
+    },
+    {
+      "label": "shell_integration",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L195",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_shell_integration",
+      "community": 1,
+      "norm_label": "shell_integration"
+    },
+    {
+      "label": "final_space",
+      "file_type": "code",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L196",
+      "_origin": "ast",
+      "id": "oh_my_posh_kanagawa_wave_omp_final_space",
+      "community": 1,
+      "norm_label": "final_space"
+    },
+    {
+      "label": "Microsoft.PowerShell_profile.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Microsoft.PowerShell_profile.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "powershell_microsoft_powershell_profile",
+      "community": 16,
+      "norm_label": "microsoft.powershell_profile.ps1"
+    },
+    {
+      "label": "Get-CompletionRoot.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Private/Get-CompletionRoot.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "private_get_completionroot",
+      "community": 2,
+      "norm_label": "get-completionroot.ps1"
+    },
+    {
+      "label": "Get-CompletionRoot()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Private/Get-CompletionRoot.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "private_get_completionroot_get_completionroot",
+      "community": 2,
+      "norm_label": "get-completionroot()"
+    },
+    {
+      "label": "Read-CompletionManifest.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Private/Read-CompletionManifest.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "private_read_completionmanifest",
+      "community": 2,
+      "norm_label": "read-completionmanifest.ps1"
+    },
+    {
+      "label": "Read-CompletionManifest()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Private/Read-CompletionManifest.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "private_read_completionmanifest_read_completionmanifest",
+      "community": 2,
+      "norm_label": "read-completionmanifest()"
+    },
+    {
+      "label": "Write-CompletionManifest.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Private/Write-CompletionManifest.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "private_write_completionmanifest",
+      "community": 2,
+      "norm_label": "write-completionmanifest.ps1"
+    },
+    {
+      "label": "Write-CompletionManifest()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Private/Write-CompletionManifest.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "private_write_completionmanifest_write_completionmanifest",
+      "community": 2,
+      "norm_label": "write-completionmanifest()"
+    },
+    {
+      "label": "Initialize-Completion.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Initialize-Completion.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_initialize_completion",
+      "community": 2,
+      "norm_label": "initialize-completion.ps1"
+    },
+    {
+      "label": "Initialize-Completion()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Initialize-Completion.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_initialize_completion_initialize_completion",
+      "community": 2,
+      "norm_label": "initialize-completion()"
+    },
+    {
+      "label": "Remove-Completion.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Remove-Completion.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_remove_completion",
+      "community": 2,
+      "norm_label": "remove-completion.ps1"
+    },
+    {
+      "label": "Remove-Completion()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Remove-Completion.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_remove_completion_remove_completion",
+      "community": 2,
+      "norm_label": "remove-completion()"
+    },
+    {
+      "label": "Save-Completion.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Save-Completion.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_save_completion",
+      "community": 2,
+      "norm_label": "save-completion.ps1"
+    },
+    {
+      "label": "Save-Completion()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Save-Completion.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_save_completion_save_completion",
+      "community": 2,
+      "norm_label": "save-completion()"
+    },
+    {
+      "label": "Test-Completion.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Test-Completion.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_test_completion",
+      "community": 2,
+      "norm_label": "test-completion.ps1"
+    },
+    {
+      "label": "Test-Completion()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Test-Completion.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_test_completion_test_completion",
+      "community": 2,
+      "norm_label": "test-completion()"
+    },
+    {
+      "label": "Update-Completions.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Update-Completions.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_update_completions",
+      "community": 2,
+      "norm_label": "update-completions.ps1"
+    },
+    {
+      "label": "Update-Completions()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Update-Completions.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_update_completions_update_completions",
+      "community": 2,
+      "norm_label": "update-completions()"
+    },
+    {
+      "label": "CompletionManager.Module.Tests.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Tests/CompletionManager.Module.Tests.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_completionmanager_module_tests",
+      "community": 18,
+      "norm_label": "completionmanager.module.tests.ps1"
+    },
+    {
+      "label": "Initialize-Completion.Tests.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Tests/Initialize-Completion.Tests.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_initialize_completion_tests",
+      "community": 19,
+      "norm_label": "initialize-completion.tests.ps1"
+    },
+    {
+      "label": "Private.Helpers.Tests.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Tests/Private.Helpers.Tests.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_private_helpers_tests",
+      "community": 20,
+      "norm_label": "private.helpers.tests.ps1"
+    },
+    {
+      "label": "Remove-Completion.Tests.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Tests/Remove-Completion.Tests.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_remove_completion_tests",
+      "community": 21,
+      "norm_label": "remove-completion.tests.ps1"
+    },
+    {
+      "label": "Save-Completion.Tests.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Tests/Save-Completion.Tests.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_save_completion_tests",
+      "community": 22,
+      "norm_label": "save-completion.tests.ps1"
+    },
+    {
+      "label": "Test-Completion.Tests.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Tests/Test-Completion.Tests.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_test_completion_tests",
+      "community": 23,
+      "norm_label": "test-completion.tests.ps1"
+    },
+    {
+      "label": "Update-Completions.Tests.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Tests/Update-Completions.Tests.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_update_completions_tests",
+      "community": 24,
+      "norm_label": "update-completions.tests.ps1"
+    },
+    {
+      "label": "Aliases.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Config/Aliases.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "config_aliases",
+      "community": 12,
+      "norm_label": "aliases.ps1"
+    },
+    {
+      "label": "Environment.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Config/Environment.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "config_environment",
+      "community": 13,
+      "norm_label": "environment.ps1"
+    },
+    {
+      "label": "PSReadLineConfig.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Config/PSReadLineConfig.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "config_psreadlineconfig",
+      "community": 14,
+      "norm_label": "psreadlineconfig.ps1"
+    },
+    {
+      "label": "AdbTools.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/AdbTools.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "functions_adbtools",
+      "community": 8,
+      "norm_label": "adbtools.ps1"
+    },
+    {
+      "label": "Get-AdbDevices()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/AdbTools.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "functions_adbtools_get_adbdevices",
+      "community": 8,
+      "norm_label": "get-adbdevices()"
+    },
+    {
+      "label": "Install-APK()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/AdbTools.ps1",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "functions_adbtools_install_apk",
+      "community": 8,
+      "norm_label": "install-apk()"
+    },
+    {
+      "label": "Uninstall-APK()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/AdbTools.ps1",
+      "source_location": "L136",
+      "_origin": "ast",
+      "id": "functions_adbtools_uninstall_apk",
+      "community": 8,
+      "norm_label": "uninstall-apk()"
+    },
+    {
+      "label": "Development.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/Development.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "functions_development",
+      "community": 7,
+      "norm_label": "development.ps1"
+    },
+    {
+      "label": "Invoke-ExercismCsharp()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/Development.ps1",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "functions_development_invoke_exercismcsharp",
+      "community": 7,
+      "norm_label": "invoke-exercismcsharp()"
+    },
+    {
+      "label": "Invoke-NeovimWsl()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/Development.ps1",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "functions_development_invoke_neovimwsl",
+      "community": 7,
+      "norm_label": "invoke-neovimwsl()"
+    },
+    {
+      "label": "Invoke-EditProfile()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/Development.ps1",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "functions_development_invoke_editprofile",
+      "community": 7,
+      "norm_label": "invoke-editprofile()"
+    },
+    {
+      "label": "Invoke-RefreshProfile()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/Development.ps1",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "functions_development_invoke_refreshprofile",
+      "community": 7,
+      "norm_label": "invoke-refreshprofile()"
+    },
+    {
+      "label": "FileSystem.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/FileSystem.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "functions_filesystem",
+      "community": 6,
+      "norm_label": "filesystem.ps1"
+    },
+    {
+      "label": "Invoke-EzaShort()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/FileSystem.ps1",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "functions_filesystem_invoke_ezashort",
+      "community": 6,
+      "norm_label": "invoke-ezashort()"
+    },
+    {
+      "label": "Invoke-EzaLong()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/FileSystem.ps1",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "functions_filesystem_invoke_ezalong",
+      "community": 6,
+      "norm_label": "invoke-ezalong()"
+    },
+    {
+      "label": "Remove-BinaryAndObjectDirectories()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/FileSystem.ps1",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "functions_filesystem_remove_binaryandobjectdirectories",
+      "community": 6,
+      "norm_label": "remove-binaryandobjectdirectories()"
+    },
+    {
+      "label": "Invoke-GetLocationPath()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/FileSystem.ps1",
+      "source_location": "L147",
+      "_origin": "ast",
+      "id": "functions_filesystem_invoke_getlocationpath",
+      "community": 6,
+      "norm_label": "invoke-getlocationpath()"
+    },
+    {
+      "label": "Git.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/Git.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "functions_git",
+      "community": 9,
+      "norm_label": "git.ps1"
+    },
+    {
+      "label": "Get-GitCommitAnalysis()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/Git.ps1",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "functions_git_get_gitcommitanalysis",
+      "community": 9,
+      "norm_label": "get-gitcommitanalysis()"
+    },
+    {
+      "label": "Get-GitCodeContributions()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/Git.ps1",
+      "source_location": "L203",
+      "_origin": "ast",
+      "id": "functions_git_get_gitcodecontributions",
+      "community": 9,
+      "norm_label": "get-gitcodecontributions()"
+    },
+    {
+      "label": "GitHubGpgKey.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/GitHubGpgKey.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "functions_githubgpgkey",
+      "community": 11,
+      "norm_label": "githubgpgkey.ps1"
+    },
+    {
+      "label": "New-GitHubGpgKey()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/GitHubGpgKey.ps1",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "functions_githubgpgkey_new_githubgpgkey",
+      "community": 11,
+      "norm_label": "new-githubgpgkey()"
+    },
+    {
+      "label": "Utilities.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/Utilities.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "functions_utilities",
+      "community": 6,
+      "norm_label": "utilities.ps1"
+    },
+    {
+      "label": "Invoke-JsonPreview()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/Utilities.ps1",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "functions_utilities_invoke_jsonpreview",
+      "community": 6,
+      "norm_label": "invoke-jsonpreview()"
+    },
+    {
+      "label": "Test-ExecutableExists()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Functions/Utilities.ps1",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "functions_utilities_test_executableexists",
+      "community": 6,
+      "norm_label": "test-executableexists()"
+    },
+    {
+      "label": "Create.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tasks_create",
+      "community": 3,
+      "norm_label": "create.ps1"
+    },
+    {
+      "label": "Write-ColorOutput()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "tasks_create_write_coloroutput",
+      "community": 3,
+      "norm_label": "write-coloroutput()"
+    },
+    {
+      "label": "Get-TaskConfiguration()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L97",
+      "_origin": "ast",
+      "id": "tasks_create_get_taskconfiguration",
+      "community": 3,
+      "norm_label": "get-taskconfiguration()"
+    },
+    {
+      "label": "Merge-Hashtables()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L173",
+      "_origin": "ast",
+      "id": "tasks_create_merge_hashtables",
+      "community": 3,
+      "norm_label": "merge-hashtables()"
+    },
+    {
+      "label": "Test-EventFolder()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L197",
+      "_origin": "ast",
+      "id": "tasks_create_test_eventfolder",
+      "community": 3,
+      "norm_label": "test-eventfolder()"
+    },
+    {
+      "label": "New-ScheduledTaskFromConfig()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L252",
+      "_origin": "ast",
+      "id": "tasks_create_new_scheduledtaskfromconfig",
+      "community": 3,
+      "norm_label": "new-scheduledtaskfromconfig()"
+    },
+    {
+      "label": "Remove-ManagedTask()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L394",
+      "_origin": "ast",
+      "id": "tasks_create_remove_managedtask",
+      "community": 3,
+      "norm_label": "remove-managedtask()"
+    },
+    {
+      "label": "Get-EventFolders()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L421",
+      "_origin": "ast",
+      "id": "tasks_create_get_eventfolders",
+      "community": 3,
+      "norm_label": "get-eventfolders()"
+    },
+    {
+      "label": "Invoke-CreateTasks()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L450",
+      "_origin": "ast",
+      "id": "tasks_create_invoke_createtasks",
+      "community": 3,
+      "norm_label": "invoke-createtasks()"
+    },
+    {
+      "label": "Invoke-RemoveTasks()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L514",
+      "_origin": "ast",
+      "id": "tasks_create_invoke_removetasks",
+      "community": 3,
+      "norm_label": "invoke-removetasks()"
+    },
+    {
+      "label": "Invoke-ListTasks()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L546",
+      "_origin": "ast",
+      "id": "tasks_create_invoke_listtasks",
+      "community": 3,
+      "norm_label": "invoke-listtasks()"
+    },
+    {
+      "label": "Invoke-ValidateFolders()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L580",
+      "_origin": "ast",
+      "id": "tasks_create_invoke_validatefolders",
+      "community": 3,
+      "norm_label": "invoke-validatefolders()"
+    },
+    {
+      "label": "Test-IsAdministrator()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L645",
+      "_origin": "ast",
+      "id": "tasks_create_test_isadministrator",
+      "community": 3,
+      "norm_label": "test-isadministrator()"
+    },
+    {
+      "label": "Test-TaskHelpers.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/_lib/Test-TaskHelpers.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_test_taskhelpers",
+      "community": 15,
+      "norm_label": "test-taskhelpers.ps1"
+    },
+    {
+      "label": "Run.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Tasks/_template/Run.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "template_run",
+      "community": 17,
+      "norm_label": "run.ps1"
+    },
+    {
+      "label": "kanagawa-wave.ps1",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Themes/kanagawa-wave.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "themes_kanagawa_wave",
+      "community": 10,
+      "norm_label": "kanagawa-wave.ps1"
+    },
+    {
+      "label": "Initialize-Theme()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Themes/kanagawa-wave.ps1",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "themes_kanagawa_wave_initialize_theme",
+      "community": 10,
+      "norm_label": "initialize-theme()"
+    },
+    {
+      "label": "Initialize-Zoxide()",
+      "file_type": "code",
+      "source_file": "dot_config/powershell/Profile/Themes/kanagawa-wave.ps1",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "themes_kanagawa_wave_initialize_zoxide",
+      "community": 10,
+      "norm_label": "initialize-zoxide()"
+    },
+    {
+      "label": "Package & Extension Manifest",
+      "file_type": "code",
+      "source_file": ".chezmoidata/packages.yaml",
+      "source_location": "line:1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Single manifest consumed by bootstrap scripts in .chezmoiscripts; scripts iterate these lists to install all tools and extensions from one authoritative source of truth",
+      "id": "chezmoidata_packages_manifest",
+      "community": 5,
+      "norm_label": "package & extension manifest"
+    },
+    {
+      "label": "Windows Winget Packages",
+      "file_type": "code",
+      "source_file": ".chezmoidata/packages.yaml",
+      "source_location": "line:6",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "chezmoidata_packages_winget",
+      "community": 5,
+      "norm_label": "windows winget packages"
+    },
+    {
+      "label": "Windows Work-Laptop Apps",
+      "file_type": "code",
+      "source_file": ".chezmoidata/packages.yaml",
+      "source_location": "line:42",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Optional work-laptop apps (DBeaver, Rancher Desktop, Codex, Copilot App) installed only when user answers yes to installWorkApps prompt at chezmoi init; defaults to yes on machines marked as work",
+      "id": "chezmoidata_packages_wingetwork",
+      "community": 5,
+      "norm_label": "windows work-laptop apps"
+    },
+    {
+      "label": "Linux APT Packages",
+      "file_type": "code",
+      "source_file": ".chezmoidata/packages.yaml",
+      "source_location": "line:51",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "chezmoidata_packages_apt",
+      "community": 5,
+      "norm_label": "linux apt packages"
+    },
+    {
+      "label": "Linux Cargo Packages",
+      "file_type": "code",
+      "source_file": ".chezmoidata/packages.yaml",
+      "source_location": "line:69",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Cargo-installed packages supplement apt because gitui, git-delta, and eza are not reliably packaged in apt on all Linux distributions",
+      "id": "chezmoidata_packages_cargo",
+      "community": 5,
+      "norm_label": "linux cargo packages"
+    },
+    {
+      "label": "VS Code Extensions List",
+      "file_type": "code",
+      "source_file": ".chezmoidata/packages.yaml",
+      "source_location": "line:75",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "chezmoidata_packages_vscode",
+      "community": 5,
+      "norm_label": "vs code extensions list"
+    },
+    {
+      "label": "Dotfiles Repository README",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "line:1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme",
+      "community": 5,
+      "norm_label": "dotfiles repository readme"
+    },
+    {
+      "label": "Chezmoi Bootstrap Process",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "line:34",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_chezmoi_bootstrap",
+      "community": 5,
+      "norm_label": "chezmoi bootstrap process"
+    },
+    {
+      "label": "Work vs Personal Machine Model",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": "line:67",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Nothing machine- or employer-specific is versioned. Identity, signing key, internal host/org URLs, safe.directory entries, and local repo paths belong in per-machine non-versioned ~/.config/git/config.local, which chezmoi seeds once from init prompts and never overwrites",
+      "id": "readme_work_personal_split",
+      "community": 5,
+      "norm_label": "work vs personal machine model"
+    },
+    {
+      "label": "OS-Divergent Config Strategy",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": "line:26",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "OS-divergent configs (bat, gitui, VS Code) stored once under ~/.config; on Windows a run_onchange script links them into %APPDATA% using directory junctions for gitui and bat (live link, no admin required), while VS Code settings are copied because its User folder holds machine state that must not be redirected",
+      "id": "readme_os_divergent_configs",
+      "community": 5,
+      "norm_label": "os-divergent config strategy"
+    },
+    {
+      "label": "GitAlias.com Alias Collection",
+      "file_type": "code",
+      "source_file": "dot_config/git/gitalias.txt",
+      "source_location": "line:1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "git_gitalias_collection",
+      "community": 4,
+      "norm_label": "gitalias.com alias collection"
+    },
+    {
+      "label": "Short Command Aliases",
+      "file_type": "concept",
+      "source_file": "dot_config/git/gitalias.txt",
+      "source_location": "line:76",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "git_gitalias_short_aliases",
+      "community": 4,
+      "norm_label": "short command aliases"
+    },
+    {
+      "label": "Commit Aliases Group",
+      "file_type": "concept",
+      "source_file": "dot_config/git/gitalias.txt",
+      "source_location": "line:129",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "git_gitalias_commit_aliases",
+      "community": 4,
+      "norm_label": "commit aliases group"
+    },
+    {
+      "label": "Log Aliases Group",
+      "file_type": "concept",
+      "source_file": "dot_config/git/gitalias.txt",
+      "source_location": "line:212",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "git_gitalias_log_aliases",
+      "community": 4,
+      "norm_label": "log aliases group"
+    },
+    {
+      "label": "Branch Aliases Group",
+      "file_type": "concept",
+      "source_file": "dot_config/git/gitalias.txt",
+      "source_location": "line:104",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "git_gitalias_branch_aliases",
+      "community": 4,
+      "norm_label": "branch aliases group"
+    },
+    {
+      "label": "PowerShell Task Management System",
+      "file_type": "document",
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "tasks_readme_system",
+      "community": 4,
+      "norm_label": "powershell task management system"
+    },
+    {
+      "label": "Create.ps1 Management Script",
+      "file_type": "concept",
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:79",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "tasks_readme_create_ps1",
+      "community": 4,
+      "norm_label": "create.ps1 management script"
+    },
+    {
+      "label": "TaskHelpers.psm1 Shared Library",
+      "file_type": "concept",
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:636",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "tasks_readme_taskhelpers",
+      "community": 4,
+      "norm_label": "taskhelpers.psm1 shared library"
+    },
+    {
+      "label": "Three-Tier Configuration System",
+      "file_type": "rationale",
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:144",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Configuration merges in order: built-in defaults in Create.ps1 then global .defaults.json then task-specific task.config.json (highest priority last), so tasks only specify what differs from defaults, minimizing verbosity",
+      "id": "tasks_readme_three_tier_config",
+      "community": 4,
+      "norm_label": "three-tier configuration system"
+    },
+    {
+      "label": "Task Trigger Types",
+      "file_type": "concept",
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:199",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "tasks_readme_trigger_types",
+      "community": 4,
+      "norm_label": "task trigger types"
+    },
+    {
+      "label": "Task Skip Mechanism",
+      "file_type": "concept",
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:766",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "tasks_readme_skip_mechanism",
+      "community": 4,
+      "norm_label": "task skip mechanism"
+    },
+    {
+      "label": "Task Template Documentation",
+      "file_type": "document",
+      "source_file": "dot_config/powershell/Profile/Tasks/_template/README.md",
+      "source_location": "line:1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "template_readme",
+      "community": 4,
+      "norm_label": "task template documentation"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp",
+      "target": "oh_my_posh_kanagawa_wave_omp_blocks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp",
+      "target": "oh_my_posh_kanagawa_wave_omp_console_title_template",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp",
+      "target": "oh_my_posh_kanagawa_wave_omp_error_line",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L196",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp",
+      "target": "oh_my_posh_kanagawa_wave_omp_final_space",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp",
+      "target": "oh_my_posh_kanagawa_wave_omp_pwd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp",
+      "target": "oh_my_posh_kanagawa_wave_omp_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp",
+      "target": "oh_my_posh_kanagawa_wave_omp_secondary_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L195",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp",
+      "target": "oh_my_posh_kanagawa_wave_omp_shell_integration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp",
+      "target": "oh_my_posh_kanagawa_wave_omp_valid_line",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp",
+      "target": "oh_my_posh_kanagawa_wave_omp_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_black",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_blue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_bright_black",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_bright_blue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_bright_cyan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_bright_green",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_bright_magenta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_bright_red",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_bright_white",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_bright_yellow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_cyan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_diag_error",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_diag_hint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_diag_info",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_diag_ok",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_diag_warning",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_git_added",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_git_changed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_git_removed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_green",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_magenta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_none",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_red",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_special",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_white",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_palette",
+      "target": "oh_my_posh_kanagawa_wave_omp_palette_yellow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_valid_line",
+      "target": "oh_my_posh_kanagawa_wave_omp_valid_line_background",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_valid_line",
+      "target": "oh_my_posh_kanagawa_wave_omp_valid_line_foreground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_valid_line",
+      "target": "oh_my_posh_kanagawa_wave_omp_valid_line_template",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_secondary_prompt",
+      "target": "oh_my_posh_kanagawa_wave_omp_secondary_prompt_background",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_secondary_prompt",
+      "target": "oh_my_posh_kanagawa_wave_omp_secondary_prompt_foreground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_secondary_prompt",
+      "target": "oh_my_posh_kanagawa_wave_omp_secondary_prompt_template",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_error_line",
+      "target": "oh_my_posh_kanagawa_wave_omp_error_line_background",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_error_line",
+      "target": "oh_my_posh_kanagawa_wave_omp_error_line_foreground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/oh-my-posh/kanagawa-wave.omp.json",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "oh_my_posh_kanagawa_wave_omp_error_line",
+      "target": "oh_my_posh_kanagawa_wave_omp_error_line_template",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Private/Get-CompletionRoot.ps1",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "private_get_completionroot",
+      "target": "private_get_completionroot_get_completionroot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Initialize-Completion.ps1",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "public_initialize_completion_initialize_completion",
+      "target": "private_get_completionroot_get_completionroot"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Remove-Completion.ps1",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "public_remove_completion_remove_completion",
+      "target": "private_get_completionroot_get_completionroot"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Save-Completion.ps1",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "public_save_completion_save_completion",
+      "target": "private_get_completionroot_get_completionroot"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Test-Completion.ps1",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "public_test_completion_test_completion",
+      "target": "private_get_completionroot_get_completionroot"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Update-Completions.ps1",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "public_update_completions_update_completions",
+      "target": "private_get_completionroot_get_completionroot"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Private/Read-CompletionManifest.ps1",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "private_read_completionmanifest",
+      "target": "private_read_completionmanifest_read_completionmanifest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Initialize-Completion.ps1",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "public_initialize_completion_initialize_completion",
+      "target": "private_read_completionmanifest_read_completionmanifest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Save-Completion.ps1",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "public_save_completion_save_completion",
+      "target": "private_read_completionmanifest_read_completionmanifest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Test-Completion.ps1",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "public_test_completion_test_completion",
+      "target": "private_read_completionmanifest_read_completionmanifest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Update-Completions.ps1",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "public_update_completions_update_completions",
+      "target": "private_read_completionmanifest_read_completionmanifest"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Private/Write-CompletionManifest.ps1",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "private_write_completionmanifest",
+      "target": "private_write_completionmanifest_write_completionmanifest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Save-Completion.ps1",
+      "source_location": "L142",
+      "weight": 1.0,
+      "source": "public_save_completion_save_completion",
+      "target": "private_write_completionmanifest_write_completionmanifest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Update-Completions.ps1",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "public_update_completions_update_completions",
+      "target": "private_write_completionmanifest_write_completionmanifest"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Initialize-Completion.ps1",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "public_initialize_completion",
+      "target": "public_initialize_completion_initialize_completion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Remove-Completion.ps1",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "public_remove_completion",
+      "target": "public_remove_completion_remove_completion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Save-Completion.ps1",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "public_save_completion",
+      "target": "public_save_completion_save_completion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Test-Completion.ps1",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "public_test_completion",
+      "target": "public_test_completion_test_completion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Modules/CompletionManager/Public/Update-Completions.ps1",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "public_update_completions",
+      "target": "public_update_completions_update_completions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/AdbTools.ps1",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "functions_adbtools",
+      "target": "functions_adbtools_get_adbdevices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/AdbTools.ps1",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "functions_adbtools",
+      "target": "functions_adbtools_install_apk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/AdbTools.ps1",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "functions_adbtools",
+      "target": "functions_adbtools_uninstall_apk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/AdbTools.ps1",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "functions_adbtools_install_apk",
+      "target": "functions_adbtools_get_adbdevices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/AdbTools.ps1",
+      "source_location": "L183",
+      "weight": 1.0,
+      "source": "functions_adbtools_uninstall_apk",
+      "target": "functions_adbtools_get_adbdevices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/Development.ps1",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "functions_development",
+      "target": "functions_development_invoke_editprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/Development.ps1",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "functions_development",
+      "target": "functions_development_invoke_exercismcsharp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/Development.ps1",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "functions_development",
+      "target": "functions_development_invoke_neovimwsl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/Development.ps1",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "functions_development",
+      "target": "functions_development_invoke_refreshprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/FileSystem.ps1",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "functions_filesystem",
+      "target": "functions_filesystem_invoke_ezalong",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/FileSystem.ps1",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "functions_filesystem",
+      "target": "functions_filesystem_invoke_ezashort",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/FileSystem.ps1",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "functions_filesystem",
+      "target": "functions_filesystem_invoke_getlocationpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/FileSystem.ps1",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "functions_filesystem",
+      "target": "functions_filesystem_remove_binaryandobjectdirectories",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dot_config/powershell/Profile/Functions/FileSystem.ps1",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "functions_filesystem_remove_binaryandobjectdirectories",
+      "target": "functions_utilities_test_executableexists"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/Git.ps1",
+      "source_location": "L203",
+      "weight": 1.0,
+      "source": "functions_git",
+      "target": "functions_git_get_gitcodecontributions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/Git.ps1",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "functions_git",
+      "target": "functions_git_get_gitcommitanalysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/GitHubGpgKey.ps1",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "functions_githubgpgkey",
+      "target": "functions_githubgpgkey_new_githubgpgkey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/Utilities.ps1",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "functions_utilities",
+      "target": "functions_utilities_invoke_jsonpreview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Functions/Utilities.ps1",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "functions_utilities",
+      "target": "functions_utilities_test_executableexists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L421",
+      "weight": 1.0,
+      "source": "tasks_create",
+      "target": "tasks_create_get_eventfolders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "tasks_create",
+      "target": "tasks_create_get_taskconfiguration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L450",
+      "weight": 1.0,
+      "source": "tasks_create",
+      "target": "tasks_create_invoke_createtasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L546",
+      "weight": 1.0,
+      "source": "tasks_create",
+      "target": "tasks_create_invoke_listtasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L514",
+      "weight": 1.0,
+      "source": "tasks_create",
+      "target": "tasks_create_invoke_removetasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L580",
+      "weight": 1.0,
+      "source": "tasks_create",
+      "target": "tasks_create_invoke_validatefolders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L173",
+      "weight": 1.0,
+      "source": "tasks_create",
+      "target": "tasks_create_merge_hashtables",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L252",
+      "weight": 1.0,
+      "source": "tasks_create",
+      "target": "tasks_create_new_scheduledtaskfromconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L394",
+      "weight": 1.0,
+      "source": "tasks_create",
+      "target": "tasks_create_remove_managedtask",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L197",
+      "weight": 1.0,
+      "source": "tasks_create",
+      "target": "tasks_create_test_eventfolder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L645",
+      "weight": 1.0,
+      "source": "tasks_create",
+      "target": "tasks_create_test_isadministrator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "tasks_create",
+      "target": "tasks_create_write_coloroutput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L436",
+      "weight": 1.0,
+      "source": "tasks_create_get_eventfolders",
+      "target": "tasks_create_write_coloroutput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L146",
+      "weight": 1.0,
+      "source": "tasks_create_get_taskconfiguration",
+      "target": "tasks_create_write_coloroutput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L456",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_createtasks",
+      "target": "tasks_create_write_coloroutput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L547",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_listtasks",
+      "target": "tasks_create_write_coloroutput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L519",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_removetasks",
+      "target": "tasks_create_write_coloroutput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L585",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_validatefolders",
+      "target": "tasks_create_write_coloroutput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L268",
+      "weight": 1.0,
+      "source": "tasks_create_new_scheduledtaskfromconfig",
+      "target": "tasks_create_write_coloroutput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L406",
+      "weight": 1.0,
+      "source": "tasks_create_remove_managedtask",
+      "target": "tasks_create_write_coloroutput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L142",
+      "weight": 1.0,
+      "source": "tasks_create_get_taskconfiguration",
+      "target": "tasks_create_merge_hashtables",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L491",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_createtasks",
+      "target": "tasks_create_get_taskconfiguration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L559",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_listtasks",
+      "target": "tasks_create_get_taskconfiguration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L527",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_removetasks",
+      "target": "tasks_create_get_taskconfiguration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L468",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_createtasks",
+      "target": "tasks_create_test_eventfolder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L554",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_listtasks",
+      "target": "tasks_create_test_eventfolder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L595",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_validatefolders",
+      "target": "tasks_create_test_eventfolder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L495",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_createtasks",
+      "target": "tasks_create_new_scheduledtaskfromconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L530",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_removetasks",
+      "target": "tasks_create_remove_managedtask",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L459",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_createtasks",
+      "target": "tasks_create_get_eventfolders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L550",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_listtasks",
+      "target": "tasks_create_get_eventfolders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L522",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_removetasks",
+      "target": "tasks_create_get_eventfolders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Tasks/Create.ps1",
+      "source_location": "L588",
+      "weight": 1.0,
+      "source": "tasks_create_invoke_validatefolders",
+      "target": "tasks_create_get_eventfolders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Themes/kanagawa-wave.ps1",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "themes_kanagawa_wave",
+      "target": "themes_kanagawa_wave_initialize_theme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "dot_config/powershell/Profile/Themes/kanagawa-wave.ps1",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "themes_kanagawa_wave",
+      "target": "themes_kanagawa_wave_initialize_zoxide",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".chezmoidata/packages.yaml",
+      "source_location": "line:51",
+      "weight": 1.0,
+      "source": "chezmoidata_packages_manifest",
+      "target": "chezmoidata_packages_apt"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".chezmoidata/packages.yaml",
+      "source_location": "line:69",
+      "weight": 1.0,
+      "source": "chezmoidata_packages_manifest",
+      "target": "chezmoidata_packages_cargo"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".chezmoidata/packages.yaml",
+      "source_location": "line:75",
+      "weight": 1.0,
+      "source": "chezmoidata_packages_manifest",
+      "target": "chezmoidata_packages_vscode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".chezmoidata/packages.yaml",
+      "source_location": "line:6",
+      "weight": 1.0,
+      "source": "chezmoidata_packages_manifest",
+      "target": "chezmoidata_packages_winget"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".chezmoidata/packages.yaml",
+      "source_location": "line:42",
+      "weight": 1.0,
+      "source": "chezmoidata_packages_manifest",
+      "target": "chezmoidata_packages_wingetwork"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line:99",
+      "weight": 1.0,
+      "source": "readme",
+      "target": "chezmoidata_packages_manifest"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": "line:34",
+      "weight": 1.0,
+      "source": "readme_chezmoi_bootstrap",
+      "target": "chezmoidata_packages_manifest"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": "line:63",
+      "weight": 1.0,
+      "source": "readme_work_personal_split",
+      "target": "chezmoidata_packages_wingetwork"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "line:15",
+      "weight": 1.0,
+      "source": "readme",
+      "target": "git_gitalias_collection"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line:34",
+      "weight": 1.0,
+      "source": "readme",
+      "target": "readme_chezmoi_bootstrap"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line:26",
+      "weight": 1.0,
+      "source": "readme",
+      "target": "readme_os_divergent_configs"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line:67",
+      "weight": 1.0,
+      "source": "readme",
+      "target": "readme_work_personal_split"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_os_divergent_configs",
+      "target": "readme_work_personal_split"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/git/gitalias.txt",
+      "source_location": "line:104",
+      "weight": 1.0,
+      "source": "git_gitalias_collection",
+      "target": "git_gitalias_branch_aliases"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/git/gitalias.txt",
+      "source_location": "line:129",
+      "weight": 1.0,
+      "source": "git_gitalias_collection",
+      "target": "git_gitalias_commit_aliases"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/git/gitalias.txt",
+      "source_location": "line:212",
+      "weight": 1.0,
+      "source": "git_gitalias_collection",
+      "target": "git_gitalias_log_aliases"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/git/gitalias.txt",
+      "source_location": "line:76",
+      "weight": 1.0,
+      "source": "git_gitalias_collection",
+      "target": "git_gitalias_short_aliases"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": null,
+      "source_location": null,
+      "weight": 1.0,
+      "source": "git_gitalias_collection",
+      "target": "tasks_readme_taskhelpers"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:79",
+      "weight": 1.0,
+      "source": "tasks_readme_system",
+      "target": "tasks_readme_create_ps1"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:766",
+      "weight": 1.0,
+      "source": "tasks_readme_system",
+      "target": "tasks_readme_skip_mechanism"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:636",
+      "weight": 1.0,
+      "source": "tasks_readme_system",
+      "target": "tasks_readme_taskhelpers"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:144",
+      "weight": 1.0,
+      "source": "tasks_readme_system",
+      "target": "tasks_readme_three_tier_config"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:199",
+      "weight": 1.0,
+      "source": "tasks_readme_system",
+      "target": "tasks_readme_trigger_types"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:109",
+      "weight": 1.0,
+      "source": "tasks_readme_system",
+      "target": "template_readme"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:274",
+      "weight": 1.0,
+      "source": "tasks_readme_create_ps1",
+      "target": "tasks_readme_taskhelpers"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md",
+      "source_location": "line:148",
+      "weight": 1.0,
+      "source": "tasks_readme_create_ps1",
+      "target": "tasks_readme_three_tier_config"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "cross_platform_package_installation",
+      "label": "Cross-Platform Package Installation",
+      "nodes": [
+        "chezmoidata_packages_manifest",
+        "chezmoidata_packages_winget",
+        "chezmoidata_packages_apt",
+        "chezmoidata_packages_cargo"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": ".chezmoidata/packages.yaml"
+    },
+    {
+      "id": "powershell_task_execution_system",
+      "label": "PowerShell Task Execution System",
+      "nodes": [
+        "tasks_readme_create_ps1",
+        "tasks_readme_taskhelpers",
+        "tasks_readme_three_tier_config"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dot_config/powershell/Profile/Tasks/README.md"
+    },
+    {
+      "id": "chezmoi_machine_initialization_flow",
+      "label": "Chezmoi Machine Initialization Flow",
+      "nodes": [
+        "readme_chezmoi_bootstrap",
+        "readme_work_personal_split",
+        "chezmoidata_packages_wingetwork"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md"
+    }
+  ],
+  "built_at_commit": "9159b2ee01ca867da508755b1fd655eb2b49ff24"
+}

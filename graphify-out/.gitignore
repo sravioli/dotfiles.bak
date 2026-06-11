@@ -1,0 +1,3 @@
+# Machine-specific paths written by the graphify skill (not portable across machines)
+.graphify_python
+.graphify_root
