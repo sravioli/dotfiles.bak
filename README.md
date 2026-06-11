@@ -37,20 +37,20 @@ holds machine state that must not be redirected).
 # One command: installs chezmoi into ~/bin, then clones + applies your dotfiles.
 # chezmoi clones with its built-in git, so no prerequisites are required first;
 # the bootstrap scripts then install Git, a PATH-managed chezmoi, and the toolset.
-iex "&{$(irm 'https://get.chezmoi.io/ps1')} -b '~/bin' -- init --apply <your-repo-url>"
+iex "&{$(irm 'https://get.chezmoi.io/ps1')} -b '~/bin' -- init --apply https://github.com/Simone-Fidanza_wkl/dotfiles.git"
 ```
 
 Prefer winget? Install chezmoi first, then init in a new terminal:
 
 ```powershell
 winget install --id twpayne.chezmoi --source winget
-chezmoi init --apply <your-repo-url>
+chezmoi init --apply https://github.com/Simone-Fidanza_wkl/dotfiles.git
 ```
 
 ### Linux
 
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply <your-repo-url>
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/Simone-Fidanza_wkl/dotfiles.git
 ```
 
 On first run chezmoi prompts for:
