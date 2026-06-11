@@ -1,11 +1,11 @@
 # dotfiles
 
-Personal dotfiles managed with [chezmoi](https://www.chezmoi.io). Primary target
-is **Windows** (PowerShell 7); **Linux** is supported on a best-effort basis.
+Personal dotfiles managed with [chezmoi](https://www.chezmoi.io). The primary
+target is **Windows** (PowerShell 7); **Linux** is supported best-effort.
 
-A new machine is set up by installing chezmoi and running a single command, which
-applies the configuration, clones a couple of upstream config repos, installs the
-base toolset, and reinstalls VS Code extensions.
+Setting up a machine is one command: it installs chezmoi, applies this config,
+clones a couple of upstream config repos, installs the base toolset, and restores
+VS Code extensions.
 
 ## What is managed
 
@@ -53,15 +53,18 @@ chezmoi init --apply https://github.com/Simone-Fidanza_wkl/dotfiles.git
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/Simone-Fidanza_wkl/dotfiles.git
 ```
 
-On first run chezmoi prompts for:
+### First-run prompts
+
+chezmoi asks a few questions and stores the answers in its local config (never
+committed):
 
 - **Git author name / email** — written to `~/.config/git/config.local`.
 - **Git signing key** — optional; leave blank if you don't sign commits.
-- **Machine type** — `work` or `personal`; stored for future per-machine templating.
+- **Machine type** — `work` or `personal`.
+- **Install work-laptop apps** — DBeaver, Rancher Desktop, Codex, and the Copilot
+  app; defaults to yes on a `work` machine.
 
-These answers are saved in chezmoi's local config and **never committed**.
-
-## Work vs. personal (read this on a work laptop)
+## Work vs. personal
 
 Nothing machine- or employer-specific is versioned. In particular the committed
 git config contains **no** identity, signing key, internal Azure DevOps orgs/feeds,
@@ -70,7 +73,6 @@ per-machine, non-versioned `~/.config/git/config.local`, which chezmoi seeds onc
 from the init prompts and then never overwrites. Edit it freely:
 
 ```sh
-chezmoi cd            # jump to the source repo (optional)
 notepad $HOME\.config\git\config.local   # Windows
 $EDITOR ~/.config/git/config.local        # Linux
 ```
@@ -78,23 +80,15 @@ $EDITOR ~/.config/git/config.local        # Linux
 `config.local` ships with commented examples for a work-only clone alias,
 `[safe]`, and `[maintenance]`.
 
-## Manual steps (intentionally not automated)
+## Not versioned
 
-- **`~/.npmrc`** — contains a live Azure DevOps PAT, so it is **not** versioned.
-  Recreate it per machine with your feed registry and a fresh token (e.g. via
-  `vsts-npm-auth` or by pasting the feed's "Connect to feed" snippet). Never
-  commit this file.
-- **VPN auto-run task** — a PowerShell task that auto-connected a corporate VPN on
-  a specific home network was deliberately excluded; it is machine/employer
-  specific.
-- **Windows PowerShell 5.1** — the loader stub only wires up PowerShell 7 (`pwsh`),
-  which is what these dotfiles target. 5.1 is left untouched.
-- **Linux extras** — WezTerm and PowerShell 7 are not in the apt list; install them
-  from their official repos if needed. `gitui` and `delta` are installed via
-  `cargo`, and `oh-my-posh` via its install script.
-- **Wallpaper / start-page images** — the `met-museum` and `tabliss` picture folders
-  (~370 MB) are intentionally **not** versioned here; they already sync through
-  OneDrive. Use a dedicated Git LFS or asset repo to version them if needed.
+A couple of things are deliberately excluded and set up per machine:
+
+- **`~/.npmrc`** — contains a live Azure DevOps PAT. Recreate it per machine with a
+  fresh token (e.g. `vsts-npm-auth` or the feed's "Connect to feed" snippet).
+  **Never commit it.**
+- **Start-page / wallpaper images** (`met-museum`, `tabliss`; ~370 MB) — already
+  synced through OneDrive. Use a dedicated asset repo if you want them in Git.
 
 ## Day-to-day
 
