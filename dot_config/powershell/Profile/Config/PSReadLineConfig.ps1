@@ -1,6 +1,24 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
+# Skip entirely when PSReadLine is unavailable or this is not an interactive
+# console. PSReadLine line editing, key handlers and predictions are only
+# meaningful at an interactive prompt, and configuring predictions under
+# redirected output throws ("virtual terminal processing ... or it's redirected").
+if (-not (Get-Command Set-PSReadLineOption -ErrorAction SilentlyContinue)) { return }
+
+$psrlInteractive = if ($null -ne $global:PSProfileInteractive) {
+  $global:PSProfileInteractive
+}
+else {
+  -not [Console]::IsOutputRedirected -and -not [Console]::IsInputRedirected
+}
+if (-not $psrlInteractive) { return }
+
+# Predictive suggestions / ListView require virtual-terminal output. Enabling
+# them when VT is unavailable or output is redirected throws, so gate on it.
+$enablePrediction = $Host.UI.SupportsVirtualTerminal -and -not [Console]::IsOutputRedirected
+
 # {{{
 # {{{2 Options
 $PSReadLineOptions = @{
@@ -26,10 +44,12 @@ $PSReadLineOptions = @{
     ListPredictionSelected = "`e[38;2;200;192;147;48;2;34;50;73m"
   }
   EditMode            = 'vi'
-  PredictionSource    = 'HistoryAndPlugin'
-  PredictionViewStyle = 'ListView'
   ShowToolTips        = $True
   ViModeIndicator     = 'Cursor'
+}
+if ($enablePrediction) {
+  $PSReadLineOptions.PredictionSource = 'HistoryAndPlugin'
+  $PSReadLineOptions.PredictionViewStyle = 'ListView'
 }
 Set-PSReadLineOption @PSReadLineOptions
 # }}}
