@@ -16,6 +16,13 @@ function New-GitHubGpgKey {
     Use an email address that is verified on your GitHub account. If you use GitHub
     email privacy, pass your GitHub no-reply email address instead.
 
+    With -UploadToGitHub the exported public key is added to your GitHub account via
+    the gh CLI (falling back to manual instructions if gh is unavailable or its token
+    lacks the gpg scope). With -ConfigureChezmoi the key id is written to chezmoi data
+    (gituser.signingkey) and the managed git config is re-applied, so signing turns on
+    without bypassing chezmoi. Prefer -ConfigureChezmoi over -ConfigureGit when this
+    repo manages ~/.config/git/config.
+
     GitHub docs:
     - https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
     - https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account
@@ -35,6 +42,9 @@ function New-GitHubGpgKey {
 
     .EXAMPLE
     New-GitHubGpgKey -Name "Mona Lisa" -Email "mona@example.com" -ReplaceExisting -ConfigureGit
+
+    .EXAMPLE
+    New-GitHubGpgKey -Name "Mona Lisa" -Email "mona@example.com" -UploadToGitHub -ConfigureChezmoi
     #>
 
     [CmdletBinding(SupportsShouldProcess = $true)]
@@ -55,7 +65,18 @@ function New-GitHubGpgKey {
         [string] $Expire = '0',
 
         # Configure global Git signing key after creating the GPG key.
+        # Writes ~/.config/git/config directly; prefer -ConfigureChezmoi when this
+        # repo manages git config so chezmoi stays the source of truth.
         [switch] $ConfigureGit,
+
+        # Upload the exported public key to GitHub automatically via the gh CLI
+        # (falls back to printing the URL if gh is missing or lacks the gpg scope).
+        [switch] $UploadToGitHub,
+
+        # Record the new key in chezmoi data (gituser.signingkey) and re-apply the
+        # managed git config so signing turns on the chezmoi way (no drift). This is
+        # the recommended alternative to -ConfigureGit for this dotfiles repo.
+        [switch] $ConfigureChezmoi,
 
         # Requires -ConfigureGit.
         [Alias('EnableCommitSigning')]
@@ -81,7 +102,21 @@ function New-GitHubGpgKey {
         [string] $GpgCommand = 'gpg',
 
         [ValidateNotNullOrEmpty()]
-        [string] $GitCommand = 'git'
+        [string] $GitCommand = 'git',
+
+        [ValidateNotNullOrEmpty()]
+        [string] $GhCommand = 'gh',
+
+        [ValidateNotNullOrEmpty()]
+        [string] $ChezmoiCommand = 'chezmoi',
+
+        # Discovered from chezmoi when left empty.
+        [AllowEmptyString()]
+        [string] $ChezmoiConfigPath = '',
+
+        # Scoped chezmoi apply target; defaults to ~/.config/git/config when empty.
+        [AllowEmptyString()]
+        [string] $GitConfigTarget = ''
     )
 
     Set-StrictMode -Version Latest
@@ -520,8 +555,79 @@ function New-GitHubGpgKey {
         return "$OwnerName - $computerDescription - Git signing - $month"
     }
 
+    function Set-ChezmoiSigningKeyData {
+        param(
+            [Parameter(Mandatory = $true)]
+            [string] $ConfigPath,
+
+            [Parameter(Mandatory = $true)]
+            [string] $SigningKey
+        )
+
+        if (-not (Test-Path -LiteralPath $ConfigPath)) {
+            throw "chezmoi config file not found at $ConfigPath."
+        }
+
+        $existingLines = @(Get-Content -LiteralPath $ConfigPath)
+        $output = New-Object 'System.Collections.Generic.List[string]'
+        $inGitUser = $false
+        $written = $false
+        $entry = '    signingkey = "' + $SigningKey + '"'
+
+        foreach ($line in $existingLines) {
+            if ($line -match '^\s*\[') {
+                if ($inGitUser -and -not $written) {
+                    $output.Add($entry)
+                    $written = $true
+                }
+
+                $inGitUser = ($line -match '^\s*\[data\.gituser\]\s*$')
+                $output.Add($line)
+                continue
+            }
+
+            if ($inGitUser -and -not $written) {
+                if ($line -match '^\s*signingkey\s*=') {
+                    $output.Add($entry)
+                    $written = $true
+                    continue
+                }
+
+                if ($line -match '^\s*$' -or $line -match '^\s*#') {
+                    $output.Add($entry)
+                    $written = $true
+                    $output.Add($line)
+                    continue
+                }
+            }
+
+            $output.Add($line)
+        }
+
+        if ($inGitUser -and -not $written) {
+            $output.Add($entry)
+            $written = $true
+        }
+
+        if (-not $written) {
+            $output.Add('')
+            $output.Add('[data.gituser]')
+            $output.Add($entry)
+        }
+
+        [System.IO.File]::WriteAllLines($ConfigPath, $output.ToArray())
+    }
+
     $enableCommitSigning = [bool] ($SignCommitsByDefault -or $EnableSigning)
     $enableTagSigning = [bool] ($SignTagsByDefault -or $EnableSigning)
+
+    if ($ConfigureGit -and $ConfigureChezmoi) {
+        throw "-ConfigureGit and -ConfigureChezmoi are mutually exclusive. Use -ConfigureChezmoi when chezmoi manages your git config; otherwise use -ConfigureGit."
+    }
+
+    if ($ConfigureChezmoi -and ($enableCommitSigning -or $enableTagSigning)) {
+        throw "-EnableSigning, -SignCommitsByDefault, and -SignTagsByDefault are for -ConfigureGit. With -ConfigureChezmoi the managed git config enables commit and tag signing automatically."
+    }
 
     if (($enableCommitSigning -or $enableTagSigning) -and -not $ConfigureGit) {
         throw "-EnableSigning, -SignCommitsByDefault, and -SignTagsByDefault require -ConfigureGit."
@@ -536,6 +642,20 @@ function New-GitHubGpgKey {
         $gitPath = Resolve-RequiredCommand `
             -CommandName $GitCommand `
             -InstallMessage 'Install Git for Windows, then reopen PowerShell.'
+    }
+
+    $ghPath = $null
+    if ($UploadToGitHub) {
+        $ghPath = Resolve-RequiredCommand `
+            -CommandName $GhCommand `
+            -InstallMessage 'Install the GitHub CLI (https://cli.github.com), run "gh auth login", then reopen PowerShell.'
+    }
+
+    $chezmoiPath = $null
+    if ($ConfigureChezmoi) {
+        $chezmoiPath = Resolve-RequiredCommand `
+            -CommandName $ChezmoiCommand `
+            -InstallMessage 'Install chezmoi (https://chezmoi.io), then reopen PowerShell.'
     }
 
     $gpgVersionResult = Invoke-NativeCapture -FilePath $gpgPath -Arguments @('--version')
@@ -617,6 +737,23 @@ function New-GitHubGpgKey {
         }
     }
 
+    $uploadedToGitHub = $false
+    if ($UploadToGitHub) {
+        Write-Host 'Uploading the public key to GitHub via gh.'
+        $ghArguments = @('gpg-key', 'add', $publicKeyPath, '--title', $githubKeyTitleSuggestion)
+        $ghResult = Invoke-NativeCapture -FilePath $ghPath -Arguments $ghArguments
+        if ($ghResult.ExitCode -eq 0) {
+            $uploadedToGitHub = $true
+            Write-Host 'Added the public key to your GitHub account.'
+        }
+        else {
+            $ghDetail = $ghResult.Stderr.Trim()
+            if (-not $ghDetail) { $ghDetail = $ghResult.Stdout.Trim() }
+            Write-Warning "Could not upload the key via gh; add it manually. $ghDetail"
+            Write-Warning 'If gh reports a missing scope, run: gh auth refresh -s write:gpg_key'
+        }
+    }
+
     $gitConfigCommands = New-Object 'System.Collections.Generic.List[string]'
 
     if ($ConfigureGit) {
@@ -671,6 +808,35 @@ function New-GitHubGpgKey {
         }
     }
 
+    $chezmoiConfigured = $false
+    if ($ConfigureChezmoi) {
+        $resolvedChezmoiConfig = $ChezmoiConfigPath
+        if (-not $resolvedChezmoiConfig) {
+            $configFileResult = Invoke-NativeCapture -FilePath $chezmoiPath -Arguments @('execute-template', '{{ .chezmoi.configFile }}')
+            if ($configFileResult.ExitCode -ne 0 -or -not $configFileResult.Stdout.Trim()) {
+                throw 'Could not determine the chezmoi config file path. Pass -ChezmoiConfigPath explicitly.'
+            }
+
+            $resolvedChezmoiConfig = $configFileResult.Stdout.Trim()
+        }
+
+        $resolvedGitTarget = $GitConfigTarget
+        if (-not $resolvedGitTarget) {
+            $resolvedGitTarget = Join-Path -Path $HOME -ChildPath '.config/git/config'
+        }
+
+        Write-Host "Recording signing key in chezmoi data: $resolvedChezmoiConfig"
+        Set-ChezmoiSigningKeyData -ConfigPath $resolvedChezmoiConfig -SigningKey "$fingerprint!"
+
+        Write-Host "Applying the managed git config: $resolvedGitTarget"
+        Invoke-NativeCommand `
+            -FilePath $chezmoiPath `
+            -Arguments @('apply', '--force', $resolvedGitTarget) `
+            -FailureMessage 'chezmoi apply of the git config failed.'
+
+        $chezmoiConfigured = $true
+    }
+
     Write-Host ''
     Write-Host 'Created GPG key.'
     Write-Host "Fingerprint: $fingerprint"
@@ -684,20 +850,44 @@ function New-GitHubGpgKey {
             Write-Host "   $gitConfigCommand"
         }
     }
+    if ($chezmoiConfigured) {
+        Write-Host ''
+        Write-Host 'chezmoi: recorded gituser.signingkey and re-applied the managed git'
+        Write-Host '         config. Commit and tag signing are now enabled.'
+    }
+
     Write-Host ''
     Write-Host 'Next steps:'
-    Write-Host '1. Add the public key to GitHub: https://github.com/settings/keys'
-    Write-Host "   Suggested title: $githubKeyTitleSuggestion"
-    Write-Host '2. Use the same verified email address for Git commits:'
-    Write-Host "   git config --global user.email `"$Email`""
-    if (-not $ConfigureGit) {
-        Write-Host '3. Configure Git to use this signing key:'
+
+    $stepNumber = 1
+    if ($uploadedToGitHub) {
+        Write-Host "$stepNumber. Done - public key uploaded to GitHub ($githubKeyTitleSuggestion)."
+    }
+    else {
+        Write-Host "$stepNumber. Add the public key to GitHub: https://github.com/settings/keys"
+        Write-Host "   Suggested title: $githubKeyTitleSuggestion"
+    }
+    $stepNumber += 1
+
+    if ($chezmoiConfigured) {
+        Write-Host "$stepNumber. Confirm your commit email matches the key ($Email)."
+        Write-Host '   In this setup it lives in ~/.config/git/config.local.'
+    }
+    else {
+        Write-Host "$stepNumber. Use the same verified email address for Git commits:"
+        Write-Host "   git config --global user.email `"$Email`""
+    }
+    $stepNumber += 1
+
+    if (-not $ConfigureGit -and -not $chezmoiConfigured) {
+        Write-Host "$stepNumber. Configure Git to use this signing key:"
         Write-Host "   $(Format-DisplayCommand -Command $GitCommand -Arguments @('config', '--global', 'gpg.program', $gpgPath))"
         Write-Host "   $(Format-DisplayCommand -Command $GitCommand -Arguments @('config', '--global', 'user.signingkey', "$fingerprint!"))"
         Write-Host "   $(Format-DisplayCommand -Command $GitCommand -Arguments @('config', '--global', 'commit.gpgsign', 'true'))"
         Write-Host "   $(Format-DisplayCommand -Command $GitCommand -Arguments @('config', '--global', 'tag.gpgSign', 'true'))"
     }
+
     Write-Host ''
-    Write-Host 'To test signing after adding the key to GitHub:'
+    Write-Host 'To test signing after the key is on GitHub:'
     Write-Host '   git commit --allow-empty -S -m "test signed commit"'
 }
