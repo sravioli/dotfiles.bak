@@ -14,3 +14,11 @@
     type = "git-repo"
     url = "https://github.com/sravioli/wezterm.git"
     refreshPeriod = "168h"
+
+# gitalias.txt fetched from upstream (https://github.com/GitAlias/gitalias) and
+# wired in via `[include]` in dot_config/git/config.tmpl. Pin to a commit by
+# putting its sha in the URL instead of `main`.
+[".config/git/gitalias.txt"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/GitAlias/gitalias/main/gitalias.txt"
+    refreshPeriod = "168h"
