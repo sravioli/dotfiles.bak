@@ -35,12 +35,18 @@ function Initialize-Completion {
 
     $root = Get-CompletionRoot
 
-    if (-not (Test-Path $root)) {
-        Write-Verbose "Completion root not found: $root — no completions to load."
+    if (-not (Test-Path -LiteralPath $root -ErrorAction SilentlyContinue)) {
+        Write-Verbose "Completion root not found or inaccessible: $root — no completions to load."
         return
     }
 
-    $programDirs = Get-ChildItem -Path $root -Directory | Sort-Object Name
+    try {
+        $programDirs = Get-ChildItem -LiteralPath $root -Directory -ErrorAction Stop | Sort-Object Name
+    }
+    catch {
+        Write-Verbose "Completion root inaccessible: $root — $($_.Exception.Message)"
+        return
+    }
     $loaded = 0
     $errors = @()
 
@@ -59,7 +65,7 @@ function Initialize-Completion {
         }
 
         $completionPath = Join-Path $dir.FullName $manifest.completionFile
-        if (-not (Test-Path $completionPath)) {
+        if (-not (Test-Path -LiteralPath $completionPath)) {
             Write-Verbose "Skipping '$($dir.Name)': completion file not found"
             continue
         }
