@@ -67,7 +67,7 @@ committed):
 ## Work vs. personal
 
 Nothing machine- or employer-specific is versioned. In particular the committed
-git config contains **no** identity, signing key, internal Azure DevOps orgs/feeds,
+git config contains **no** identity, signing key, internal host/org URLs,
 `safe.directory` entries, or local repo paths. All of that belongs in the
 per-machine, non-versioned `~/.config/git/config.local`, which chezmoi seeds once
 from the init prompts and then never overwrites. Edit it freely:
