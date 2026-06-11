@@ -85,15 +85,31 @@ $EDITOR ~/.config/git/config.local        # Linux
 ## Commit signing
 
 Signing is rendered into the (versioned) git config **only** when a signing key
-is set — no key id or fingerprint is ever stored in the repo. To turn on GPG
-signing for a machine:
+is set — no key id or fingerprint is ever stored in the repo.
 
-1. Create or import a signing key. The PowerShell profile ships a
-   `New-GitHubGpgKey` helper that generates one and prints the public block to
-   upload to your Git host.
+The PowerShell profile ships a `New-GitHubGpgKey` helper. The fast path creates
+the key, uploads the public key to GitHub, records the key id in chezmoi data,
+and re-applies the managed git config in one step:
+
+```powershell
+New-GitHubGpgKey -Name "Your Name" -Email "you@users.noreply.github.com" -UploadToGitHub -ConfigureChezmoi
+```
+
+- `-UploadToGitHub` adds the public key via the [`gh`](https://cli.github.com)
+  CLI. If `gh` is missing or its token lacks the GPG scope it prints the manual
+  URL instead (re-auth with `gh auth refresh -s write:gpg_key`).
+- `-ConfigureChezmoi` keeps chezmoi the source of truth: it sets `signingkey`
+  under `[data.gituser]` and runs a scoped `chezmoi apply` on the git config.
+  Avoid `-ConfigureGit`, which writes the global git config directly and drifts
+  from the template.
+
+To do it by hand, run the helper without those switches and finish manually:
+
+1. `New-GitHubGpgKey -Name "Your Name" -Email "you@example.com"` — generates the
+   key and prints the public block (also copied to the clipboard).
 2. Add the public key to your Git host (GitHub → **Settings → SSH and GPG keys**).
-3. Tell chezmoi the key id: re-run `chezmoi init`, or set `signingkey` under
-   `[data.gituser]` in `~/.config/chezmoi/chezmoi.toml`.
+3. Set `signingkey` under `[data.gituser]` in `~/.config/chezmoi/chezmoi.toml`
+   (or re-run `chezmoi init`).
 4. `chezmoi apply` — the git config now sets `user.signingkey`, points
    `gpg.program` at your local gpg, and enables `commit.gpgsign` / `tag.gpgSign`.
 
