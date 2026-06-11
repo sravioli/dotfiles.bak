@@ -80,16 +80,6 @@ $EDITOR ~/.config/git/config.local        # Linux
 `config.local` ships with commented examples for a work-only clone alias,
 `[safe]`, and `[maintenance]`.
 
-## Not versioned
-
-A couple of things are deliberately excluded and set up per machine:
-
-- **`~/.npmrc`** — contains a live Azure DevOps PAT. Recreate it per machine with a
-  fresh token (e.g. `vsts-npm-auth` or the feed's "Connect to feed" snippet).
-  **Never commit it.**
-- **Start-page / wallpaper images** (`met-museum`, `tabliss`; ~370 MB) — already
-  synced through OneDrive. Use a dedicated asset repo if you want them in Git.
-
 ## Day-to-day
 
 ```sh
