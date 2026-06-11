@@ -9,6 +9,7 @@ Set-Alias -Name gui -Value gitui
 Set-Alias -Name vim -Value "$env:LOCALAPPDATA\Programs\Git\usr\bin\vim.exe"
 Set-Alias -Name dk -Value docker
 Set-Alias -Name dkc -Value 'docker compose'
+Set-Alias -Name cz -Value chezmoi
 
 # Quick exit alias (vim-style)
 Set-Alias -Name :q -Value exit
