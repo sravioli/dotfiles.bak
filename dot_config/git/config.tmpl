@@ -15,6 +15,21 @@
     path = ~/.config/git/fzf.gitconfig
     path = ~/.config/git/config.local
 
+{{ if .gituser.signingkey -}}
+# Commit signing — rendered only when a signing key is set at init.
+[user]
+    signingkey = {{ .gituser.signingkey }}
+{{ $gpgProgram := lookPath "gpg" -}}
+{{ if $gpgProgram -}}
+[gpg]
+    program = {{ $gpgProgram | replace "\\" "/" }}
+{{ end -}}
+[commit]
+    gpgsign = true
+[tag]
+    gpgSign = true
+
+{{ end -}}
 [interactive]
     diffFilter = delta --color-only
 

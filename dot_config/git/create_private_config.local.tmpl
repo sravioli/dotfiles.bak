@@ -3,17 +3,17 @@
 # Seeded once by chezmoi (create_) from the values you entered at
 # `chezmoi init`. chezmoi never overwrites this file afterwards, so you can
 # freely edit it. Keep anything machine- or work-specific here:
-#   - identity / signing key
+#   - identity (name / email)
 #   - safe.directory entries
 #   - maintenance repos
 #   - work-only clone aliases (e.g. internal ADO orgs)
+#
+# Commit signing lives in the main (versioned) git config, gated on the signing
+# key you set at `chezmoi init`; it is not duplicated here.
 
 [user]
     name = {{ .gituser.name }}
     email = {{ .gituser.email }}
-{{- if .gituser.signingkey }}
-    signingkey = {{ .gituser.signingkey }}
-{{- end }}
 
 # --- Examples (uncomment and adapt per machine) ---------------------------
 #
